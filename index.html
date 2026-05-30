@@ -3,721 +3,621 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Medina Paes Imóveis | Imóveis de Leilão</title>
+<title>Medina Paes | Imóveis de Leilão</title>
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#F0F4FB;color:#1B2E5E;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#F0F4FB;color:#1B2E5E}
 a{text-decoration:none;color:inherit}
-:root{--az:#1B2E5E;--ro:#1E4DB7;--ou:#F5A800;--od:#c98900;--bg:#F0F4FB;--wh:#fff;--su:#5a6a8a;--bd:#dce4f2;--s1:0 2px 16px rgba(27,46,94,.09);--s2:0 8px 36px rgba(27,46,94,.18);--gn:#16a34a;--wp:#25D366}
-.fwpp{position:fixed;bottom:24px;right:24px;z-index:300;display:flex;align-items:center;gap:10px;background:var(--wp);color:#fff;font-weight:800;font-size:14px;padding:13px 22px 13px 16px;border-radius:50px;box-shadow:0 6px 24px rgba(37,211,102,.45);text-decoration:none;transition:all .22s}
-.fwpp:hover{background:#1ebe57;transform:translateY(-3px)}
-.fwpp svg{width:22px;height:22px;flex-shrink:0}
-@media(max-width:480px){.fwpp{padding:13px;border-radius:50%;width:54px;height:54px;justify-content:center}.fwpp span{display:none}}
-header{background:var(--wh);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:200;box-shadow:0 2px 12px rgba(27,46,94,.07)}
-.hdr{max-width:1280px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+:root{
+  --az:#1B2E5E;--ro:#1E4DB7;--ou:#F5A800;--od:#c98900;
+  --bg:#F0F4FB;--wh:#fff;--su:#5a6a8a;--bd:#dce4f2;
+  --gn:#16a34a;--wp:#25D366
+}
+
+/* ── HEADER ── */
+.hdr{background:var(--wh);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(27,46,94,.06)}
+.hdr-in{max-width:1280px;margin:0 auto;padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:8px}
-.lmp{font-family:'Arial Black',sans-serif;font-weight:900;font-size:28px;letter-spacing:-1px;line-height:1}
-.lmp .m{color:var(--az)}.lmp .p{color:var(--ou)}
-.ltx{display:flex;flex-direction:column}
-.lnm{font-family:'Arial Black',sans-serif;font-weight:900;font-size:13px;letter-spacing:.5px;color:var(--az)}
-.lsb{font-size:8px;letter-spacing:3px;color:var(--su);text-transform:uppercase}
-.hdr-r{display:flex;align-items:center;gap:10px}
-.lpill{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--su);padding:5px 12px;background:var(--bg);border-radius:8px;border:1px solid var(--bd)}
-.lpill strong{color:var(--az)}
+.logo-mp{font-family:'Arial Black',sans-serif;font-size:26px;font-weight:900;letter-spacing:-1px;line-height:1}
+.logo-mp .m{color:var(--az)}.logo-mp .p{color:var(--ou)}
+.logo-tx{display:flex;flex-direction:column}
+.logo-nm{font-family:'Arial Black',sans-serif;font-size:12px;font-weight:900;letter-spacing:.5px;color:var(--az)}
+.logo-sb{font-size:8px;letter-spacing:3px;color:var(--su);text-transform:uppercase}
+.pill-live{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--su);padding:4px 11px;background:var(--bg);border-radius:8px;border:1px solid var(--bd)}
+.pill-live strong{color:var(--az)}
 .dot{width:7px;height:7px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.bwpp{display:flex;align-items:center;gap:7px;background:var(--wp);color:#fff;font-weight:700;font-size:13px;padding:9px 18px;border-radius:50px;text-decoration:none;white-space:nowrap}
-.bwpp svg{width:17px;height:17px}
-/* DASH */
-.dash{background:linear-gradient(135deg,#0a1428,#1B2E5E);border-bottom:3px solid var(--ou)}
-.din{max-width:1280px;margin:0 auto;padding:20px 24px 0}
-.mrow{display:grid;grid-template-columns:1fr auto;gap:16px;margin-bottom:16px}
-.mttl{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:6px}
-.mcards{display:flex;gap:10px;flex-wrap:wrap}
-.mcard{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 14px;min-width:110px}
-.mcl{font-size:9px;font-weight:700;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:3px}
-.mcv{font-size:18px;font-weight:900;color:#fff;line-height:1;margin-bottom:2px}
-.mct{font-size:10px;font-weight:700}
-.mct.dn{color:#4ade80}.mct.nt{color:rgba(255,255,255,.5)}
-.ctx{background:rgba(245,168,0,.12);border:1px solid rgba(245,168,0,.3);border-radius:10px;padding:12px 14px;max-width:300px}
-.ctxttl{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--ou);margin-bottom:5px}
-.ctxtx{font-size:12px;color:rgba(255,255,255,.8);line-height:1.6}
-.cttl{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px}
-.cgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:10px}
-.cc{border-radius:10px;padding:12px 11px;border:1px solid}
-.cc.hl{border-color:rgba(245,168,0,.5);background:rgba(245,168,0,.11)}
-.cc.nm{border-color:rgba(255,255,255,.1);background:rgba(255,255,255,.05)}
-.ccic{font-size:16px;margin-bottom:4px}
-.ccnm{font-size:9px;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:3px}
-.ccvl{font-size:18px;font-weight:900;line-height:1;margin-bottom:2px}
-.cc.hl .ccvl{color:var(--ou)}.cc.nm .ccvl{color:#fff}
-.ccsb{font-size:9px;font-weight:600}
-.cc.hl .ccsb{color:rgba(245,168,0,.6)}.cc.nm .ccsb{color:rgba(255,255,255,.38)}
-.bars{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;padding-bottom:12px}
-.bw{display:flex;flex-direction:column;gap:3px}
-.bl{font-size:8px;color:rgba(255,255,255,.35);font-weight:600}
-.bt{height:3px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
-.bf{height:100%;border-radius:3px}
-.bf.go{background:var(--ou)}.bf.gr{background:rgba(255,255,255,.25)}
-.dfn{font-size:9px;color:rgba(255,255,255,.25);padding:8px 0 12px;text-align:right}
-.pjbar{background:rgba(0,0,0,.2);border-top:1px solid rgba(255,255,255,.07)}
-.pjin{max-width:1280px;margin:0 auto;padding:9px 24px;display:flex;align-items:center;gap:8px;overflow-x:auto}
-.pjlbl{font-size:11px;font-weight:700;color:var(--ou);white-space:nowrap}
-.pjpill{display:inline-flex;align-items:center;background:rgba(245,168,0,.12);border:1px solid rgba(245,168,0,.25);border-radius:50px;padding:4px 11px;font-size:11px;font-weight:600;color:rgba(255,255,255,.75);white-space:nowrap;flex-shrink:0}
-/* ABAS */
-.fbar{background:var(--wh);border-bottom:1px solid var(--bd);overflow-x:auto}
-.fbin{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center}
-.ftab{display:flex;align-items:center;gap:5px;padding:14px 14px;font-size:12px;font-weight:700;color:var(--su);border:none;border-bottom:2px solid transparent;background:none;cursor:pointer;white-space:nowrap;transition:all .15s}
-.ftab:hover{color:var(--az)}
-.ftab.on{color:var(--az);border-bottom-color:var(--az)}
-.ftab .tc{font-size:10px;font-weight:800;background:var(--bg);color:var(--su);padding:1px 6px;border-radius:50px;border:1px solid var(--bd)}
-.ftab.on .tc{background:var(--az);color:#fff;border-color:var(--az)}
-.ftab.gd.on{color:var(--od);border-bottom-color:var(--ou)}
-.ftab.gd.on .tc{background:var(--ou);color:var(--az);border-color:var(--ou)}
-.fsep{width:1px;height:24px;background:var(--bd);margin:0 4px;flex-shrink:0}
-/* SORT */
-.sbar{background:var(--wh);border-bottom:1px solid var(--bd);padding:8px 24px}
-.sbin{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.scnt{font-size:13px;font-weight:800;color:var(--az)}
-.ssub{font-size:11px;color:var(--su)}
-.spills{display:flex;gap:6px;flex-wrap:wrap}
-.sp{font-size:11px;font-weight:600;padding:4px 11px;border-radius:50px;border:1px solid var(--bd);background:var(--bg);color:var(--su);cursor:pointer;transition:all .15s}
+.btn-wpp{display:flex;align-items:center;gap:7px;background:var(--wp);color:#fff;font-size:13px;font-weight:700;padding:9px 18px;border-radius:50px;text-decoration:none}
+.btn-wpp svg{width:17px;height:17px}
+
+/* ── FILTROS ── */
+.bar1{background:var(--wh);border-bottom:1px solid var(--bd);overflow-x:auto}
+.bar1::-webkit-scrollbar{display:none}
+.bar1-in{max-width:1280px;margin:0 auto;padding:0 24px;display:flex}
+.tab{display:inline-flex;align-items:center;gap:5px;padding:12px 16px;font-size:13px;font-weight:700;color:var(--su);border-bottom:2px solid transparent;white-space:nowrap;transition:color .15s,border-color .15s}
+.tab.on{color:var(--az);border-bottom-color:var(--az)}
+.tab .n{font-size:10px;font-weight:800;background:var(--bg);color:var(--su);padding:1px 7px;border-radius:50px;border:1px solid var(--bd)}
+.tab.on .n{background:var(--az);color:#fff;border-color:var(--az)}
+
+.bar2{background:var(--wh);border-bottom:1px solid var(--bd);padding:8px 24px;overflow-x:auto}
+.bar2::-webkit-scrollbar{display:none}
+.bar2-in{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:max-content}
+.cnt{font-size:13px;font-weight:800;color:var(--az)}
+.cnt-sub{font-size:11px;color:var(--su);margin-left:6px}
+.sorts{display:flex;gap:6px}
+.sp{font-size:11px;font-weight:600;padding:5px 13px;border-radius:50px;border:1px solid var(--bd);background:var(--bg);color:var(--su);white-space:nowrap;transition:all .15s}
 .sp.on{background:var(--az);color:#fff;border-color:var(--az)}
-/* GRID */
-.main{max-width:1280px;margin:0 auto;padding:24px 24px 60px}
-.csep{display:flex;align-items:center;gap:12px;margin:0 0 18px}
-.csl{flex:1;height:1px;background:var(--bd)}
-.cst{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--az);white-space:nowrap}
-.sec2{margin-top:40px}
-.cgr{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:20px}
-/* SCORE */
-.scb{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:900;padding:4px 9px;border-radius:50px}
-.scs{background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0}
-.sca{background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe}
-.scb2{background:#fffbeb;color:#92400e;border:1px solid #fde68a}
-.scc{background:#fef2f2;color:#b91c1c;border:1px solid #fecaca}
-/* CARD */
-.card{background:var(--wh);border-radius:14px;border:1px solid var(--bd);box-shadow:var(--s1);overflow:hidden;display:flex;flex-direction:column;transition:all .22s}
-.card:hover{box-shadow:var(--s2);transform:translateY(-4px);border-color:rgba(30,77,183,.18)}
-.cimg{position:relative;overflow:hidden;height:185px;background:linear-gradient(135deg,#d0dcf0,#b8cceb);flex-shrink:0}
-.cimg img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.card:hover .cimg img{transform:scale(1.06)}
-.sk{position:absolute;inset:0;background:linear-gradient(90deg,#d8e2f0 25%,#e8eef8 50%,#d8e2f0 75%);background-size:200% 100%;animation:shim 1.4s infinite}
+
+/* ── GRID ── */
+.main{max-width:1280px;margin:0 auto;padding:28px 24px 80px}
+.sep{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.sep-l{flex:1;height:1px;background:var(--bd)}
+.sep-t{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--az);white-space:nowrap}
+.sec2{margin-top:48px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);gap:16px}.pill-live{display:none}}
+@media(max-width:540px){.grid{grid-template-columns:1fr;gap:14px}.hdr-in{padding:0 14px}.bar2{padding:8px 14px}.main{padding:16px 14px 60px}}
+
+/* ── CARD ── */
+.card{background:var(--wh);border-radius:16px;border:1px solid rgba(27,46,94,.08);box-shadow:0 4px 20px rgba(27,46,94,.09);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(27,46,94,.16)}
+.card-img{position:relative;height:195px;background:linear-gradient(135deg,#dce8f5,#c8d8ed);overflow:hidden;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s}
+.card-img img.loaded{opacity:1}
+.shimmer{position:absolute;inset:0;background:linear-gradient(90deg,#dce8f5 25%,#e8f0f8 50%,#dce8f5 75%);background-size:200% 100%;animation:shim 1.4s infinite}
 @keyframes shim{0%{background-position:200% 0}100%{background-position:-200% 0}}
-.noph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#8fa3c8;font-size:11px}
-.noph svg{width:26px;height:26px;fill:#a8bcd8}
-.bdesc{position:absolute;top:10px;right:10px;background:#ea580c;color:#fff;font-size:14px;font-weight:900;padding:4px 11px;border-radius:50px}
-.encb{position:absolute;bottom:0;left:0;right:0;background:rgba(220,38,38,.88);color:#fff;font-size:10px;font-weight:700;padding:5px 10px}
-.ctgs{display:flex;gap:5px;flex-wrap:wrap;padding:9px 12px 0}
-.tag{display:inline-flex;align-items:center;font-size:10px;font-weight:700;padding:3px 8px;border-radius:50px;border:1px solid;white-space:nowrap}
-.tfin{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
-.tonl{background:#f0fdf4;color:#15803d;border-color:#bbf7d0}
-.tfgt{background:#f0fdf4;color:#15803d;border-color:#bbf7d0}
-.tbx{background:#f0fdf4;color:#15803d;border-color:#bbf7d0}
-.tmd{background:#fffbeb;color:#92400e;border-color:#fde68a}
-.tal{background:#fef2f2;color:#b91c1c;border-color:#fecaca}
-.cbdy{padding:10px 12px 8px;flex:1;display:flex;flex-direction:column;gap:7px;cursor:pointer}
-.cttl2{font-size:14px;font-weight:800;color:var(--az);line-height:1.2}
-.csub2{font-size:11px;color:var(--su);line-height:1.4}
-.prow{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--bg);border:1px solid var(--bd);border-radius:9px;padding:8px 10px}
+.no-img{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#8fa3c8;font-size:11px}
+.no-img svg{width:26px;height:26px;fill:#a8bcd8}
+.badge-desc{position:absolute;top:10px;right:10px;background:#ea580c;color:#fff;font-size:13px;font-weight:900;padding:4px 11px;border-radius:50px}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px;padding:10px 12px 0}
+.tag{font-size:10px;font-weight:700;padding:3px 8px;border-radius:50px;border:1px solid;white-space:nowrap}
+.t-sc-s{background:#f0fdf4;color:#15803d;border-color:#bbf7d0}
+.t-sc-a{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
+.t-sc-b{background:#fffbeb;color:#92400e;border-color:#fde68a}
+.t-sc-c{background:#fef2f2;color:#b91c1c;border-color:#fecaca}
+.t-bx{background:#f0fdf4;color:#15803d;border-color:#bbf7d0}
+.t-md{background:#fffbeb;color:#92400e;border-color:#fde68a}
+.t-al{background:#fef2f2;color:#b91c1c;border-color:#fecaca}
+.t-fin{background:#eff6ff;color:#1d4ed8;border-color:#bfdbfe}
+.t-onl{background:#f0fdf4;color:#15803d;border-color:#bbf7d0}
+.t-fgt{background:#f0fdf4;color:#15803d;border-color:#bbf7d0}
+.card-body{padding:10px 12px 8px;flex:1;display:flex;flex-direction:column;gap:8px;cursor:pointer}
+.card-title{font-size:14px;font-weight:800;color:var(--az);line-height:1.25}
+.card-sub{font-size:11px;color:var(--su);line-height:1.4}
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:8px 10px}
 .pr .lb{font-size:9px;color:var(--su);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:1px}
 .pr .vl{font-size:15px;font-weight:900;color:var(--az)}
-.pr .vl.st{font-size:11px;color:#94a3b8;text-decoration:line-through;font-weight:600}
-.pr.gn .lb{color:var(--gn)}.pr.gn .vl{color:var(--gn);font-size:14px}
-.pr.go .lb{color:var(--od)}.pr.go .vl{color:var(--od);font-size:13px}
-.pbox{background:rgba(27,46,94,.05);border:1px solid rgba(27,46,94,.13);border-radius:9px;padding:8px 10px;display:flex;justify-content:space-between;align-items:flex-start}
-.pbl .pblb{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--az);margin-bottom:2px}
-.pbl .pbbr{font-size:10px;color:var(--su)}
-.pbv{font-size:15px;font-weight:900;color:var(--az);white-space:nowrap}
-.cft{padding:8px 12px 10px;border-top:1px solid var(--bd);display:flex;gap:6px}
-.bsm{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;font-size:11px;font-weight:700;padding:7px 6px;border-radius:50px;border:none;cursor:pointer;transition:all .18s;text-decoration:none;white-space:nowrap}
-.bsm svg{width:12px;height:12px;flex-shrink:0}
-.bver{background:var(--bg);color:var(--ro);border:1.5px solid var(--ro)}
-.bver:hover{background:var(--ro);color:#fff}
-.bint{background:var(--az);color:#fff}
-.bint:hover{background:var(--ro)}
-.bdet{background:transparent;color:var(--su);border:1.5px solid var(--bd)}
-.bdet:hover{background:var(--bg);color:var(--az)}
-/* MODAL */
-.ov{position:fixed;inset:0;background:rgba(10,20,50,.72);z-index:500;display:flex;align-items:flex-start;justify-content:center;padding:16px;backdrop-filter:blur(4px);overflow-y:auto}
-.ov.hid{display:none}
-.modal{background:var(--wh);border-radius:20px;max-width:820px;width:100%;margin:auto;overflow:hidden;box-shadow:0 24px 80px rgba(10,20,50,.35);animation:fu .25s ease}
-@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.mhero{position:relative;height:240px;background:linear-gradient(135deg,#d0dcf0,#b8cceb);overflow:hidden}
-.mhero img{width:100%;height:100%;object-fit:cover}
-.mcls{position:absolute;top:12px;right:12px;width:34px;height:34px;background:rgba(255,255,255,.92);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--az);font-weight:700;z-index:10}
-.menc{position:absolute;bottom:0;left:0;right:0;background:rgba(220,38,38,.9);color:#fff;font-size:11px;font-weight:700;padding:7px 14px}
-.mbdy{padding:20px 22px 22px}
-.mtop{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
-.mh1{font-size:20px;font-weight:900;color:var(--az);line-height:1.2}
-.msb{font-size:12px;color:var(--su);margin-top:3px}
-.mtgs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
-.mprs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
-.mpr{background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:10px 11px}
-.mpr .lb{font-size:9px;color:var(--su);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
-.mpr .vl{font-size:15px;font-weight:900;color:var(--az)}
-.mpr.gn .lb{color:var(--gn)}.mpr.gn .vl{color:var(--gn)}
-.mpr.go .lb{color:var(--od)}.mpr.go .vl{color:var(--od)}
-.mpart{background:rgba(27,46,94,.06);border:1.5px solid rgba(27,46,94,.18);border-radius:12px;padding:12px 14px;margin-bottom:12px}
-.mptl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--az);margin-bottom:9px}
-.mpgr{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pr .vl.cross{font-size:11px;color:#94a3b8;text-decoration:line-through;font-weight:600}
+.pr.g .lb{color:var(--gn)}.pr.g .vl{color:var(--gn);font-size:14px}
+.pr.o .lb{color:var(--od)}.pr.o .vl{color:var(--od);font-size:13px}
+.part-box{background:rgba(27,46,94,.04);border:1px solid rgba(27,46,94,.12);border-radius:9px;padding:8px 10px;display:flex;justify-content:space-between;align-items:flex-start}
+.part-l .part-lbl{font-size:9px;font-weight:800;text-transform:uppercase;color:var(--az);margin-bottom:2px}
+.part-l .part-br{font-size:10px;color:var(--su)}
+.part-v{font-size:15px;font-weight:900;color:var(--az)}
+.card-foot{padding:8px 12px 12px;border-top:1px solid var(--bd);display:flex;gap:6px}
+.btn{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;font-size:11px;font-weight:700;padding:8px 6px;border-radius:50px;border:none;text-decoration:none;white-space:nowrap;transition:opacity .15s}
+.btn:hover{opacity:.85}
+.btn svg{width:12px;height:12px;flex-shrink:0}
+.btn-det{background:transparent;color:var(--su);border:1.5px solid var(--bd)}
+.btn-cai{background:var(--bg);color:var(--ro);border:1.5px solid var(--ro)}
+.btn-wpi{background:var(--az);color:#fff}
+
+/* ── MODAL (tela cheia) ── */
+#modal-wrap{display:none;position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto}
+.modal-close{position:fixed;top:14px;right:14px;width:40px;height:40px;background:rgba(255,255,255,.95);border:1.5px solid var(--bd);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--az);font-weight:700;z-index:600;box-shadow:0 2px 12px rgba(0,0,0,.12);cursor:pointer}
+.modal-hero{position:relative;height:280px;background:linear-gradient(135deg,#dce8f5,#c8d8ed);overflow:hidden}
+.modal-hero img{width:100%;height:100%;object-fit:cover}
+.modal-body{max-width:860px;margin:0 auto;padding:28px 24px 100px}
+.modal-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+.modal-h1{font-size:21px;font-weight:900;color:var(--az);line-height:1.2}
+.modal-sub{font-size:12px;color:var(--su);margin-top:3px}
+.modal-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.modal-prices{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px}
+.mp{background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:10px 11px}
+.mp .lb{font-size:9px;color:var(--su);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
+.mp .vl{font-size:15px;font-weight:900;color:var(--az)}
+.mp.g .lb{color:var(--gn)}.mp.g .vl{color:var(--gn)}
+.mp.o .lb{color:var(--od)}.mp.o .vl{color:var(--od)}
+.modal-part{background:rgba(27,46,94,.05);border:1.5px solid rgba(27,46,94,.15);border-radius:12px;padding:12px 14px;margin-bottom:12px}
+.mpt{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--az);margin-bottom:9px}
+.mpg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .mpi .lb{font-size:10px;color:var(--su);font-weight:600;margin-bottom:2px}
 .mpi .vl{font-size:14px;font-weight:900;color:var(--az)}
-.mpi.tot .vl{color:var(--ro);font-size:15px}
 .mpi.tot .lb{color:var(--ro);font-weight:700}
-.mpnt{font-size:10px;color:var(--su);margin-top:8px;padding-top:8px;border-top:1px solid var(--bd);line-height:1.5}
-.avf{background:var(--bg);border:1px solid var(--bd);border-radius:12px;padding:13px 14px;margin-bottom:12px}
-.avfttl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:var(--az);margin-bottom:10px}
-.avfgr{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mpi.tot .vl{color:var(--ro);font-size:15px}
+.mpn{font-size:10px;color:var(--su);margin-top:8px;padding-top:8px;border-top:1px solid var(--bd);line-height:1.5}
+.avf-box{background:var(--bg);border:1px solid var(--bd);border-radius:12px;padding:13px 14px;margin-bottom:12px}
+.avf-ttl{font-size:10px;font-weight:800;text-transform:uppercase;color:var(--az);margin-bottom:10px}
+.avf-gr{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .avc{border-radius:9px;padding:11px 12px;border:1px solid}
 .avc.av{background:#f0fdf4;border-color:#bbf7d0}
 .avc.fn{background:#eff6ff;border-color:#bfdbfe}
-.avcttl{font-size:11px;font-weight:800;margin-bottom:7px}
-.avc.av .avcttl{color:#15803d}.avc.fn .avcttl{color:#1d4ed8}
+.avc-ttl{font-size:11px;font-weight:800;margin-bottom:7px}
+.avc.av .avc-ttl{color:#15803d}.avc.fn .avc-ttl{color:#1d4ed8}
 .avr{display:flex;justify-content:space-between;font-size:11px;color:var(--su);margin-bottom:3px}
-.avr .av{font-weight:700;color:var(--az)}
-.avcvrd{font-size:11px;font-weight:700;margin-top:7px;padding-top:7px;border-top:1px solid rgba(0,0,0,.08)}
-.avc.av .avcvrd{color:#15803d}.avc.fn .avcvrd{color:#1d4ed8}
-.avfnt{font-size:10px;color:var(--su);margin-top:8px;line-height:1.5;font-style:italic}
-.mtabs{display:flex;gap:2px;border-bottom:1px solid var(--bd);margin-bottom:14px}
-.mtab{padding:7px 12px;font-size:12px;font-weight:700;color:var(--su);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none}
-.mtab.on{color:var(--az);border-bottom-color:var(--az)}
+.avr .v{font-weight:700;color:var(--az)}
+.avc-vrd{font-size:11px;font-weight:700;margin-top:7px;padding-top:7px;border-top:1px solid rgba(0,0,0,.08)}
+.avc.av .avc-vrd{color:#15803d}.avc.fn .avc-vrd{color:#1d4ed8}
+.avf-nt{font-size:10px;color:var(--su);margin-top:8px;font-style:italic;line-height:1.5}
+.m-tabs{display:flex;gap:2px;border-bottom:1px solid var(--bd);margin-bottom:14px}
+.m-tab{padding:7px 13px;font-size:12px;font-weight:700;color:var(--su);border-bottom:2px solid transparent;transition:all .15s}
+.m-tab.on{color:var(--az);border-bottom-color:var(--az)}
 .tpane{display:none}.tpane.on{display:block}
 .sgr{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:12px}
 .stat{background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:10px 11px}
 .stat .lb{font-size:9px;color:var(--su);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
 .stat .vl{font-size:14px;font-weight:900;color:var(--az)}
-.stat.go .vl{color:var(--od)}
+.stat.o .vl{color:var(--od)}
 .tbox{font-size:12px;color:var(--su);line-height:1.65;padding:11px 13px;background:rgba(27,46,94,.04);border-left:3px solid var(--ro);border-radius:0 8px 8px 0;margin-bottom:12px}
-.mapbtn{display:inline-flex;align-items:center;gap:6px;background:var(--bg);border:1.5px solid var(--bd);color:var(--az);font-weight:700;font-size:12px;padding:8px 14px;border-radius:50px;transition:all .2s;margin-bottom:12px;text-decoration:none}
-.mapbtn svg{width:13px;height:13px;fill:currentColor}
+.map-btn{display:inline-flex;align-items:center;gap:6px;background:var(--bg);border:1.5px solid var(--bd);color:var(--az);font-weight:700;font-size:12px;padding:8px 14px;border-radius:50px;margin-bottom:12px;text-decoration:none}
+.map-btn svg{width:13px;height:13px;fill:currentColor}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .chip{font-size:11px;font-weight:600;padding:4px 10px;border-radius:50px;background:rgba(27,46,94,.06);color:var(--az);border:1px solid var(--bd)}
-.pj{display:flex;align-items:flex-start;gap:9px;padding:10px 11px;background:rgba(245,168,0,.07);border:1px solid rgba(245,168,0,.2);border-radius:10px;margin-bottom:8px}
-.pjic{width:30px;height:30px;background:var(--ou);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.pjic svg{width:15px;height:15px;fill:var(--az)}
-.pjt{font-size:12px;font-weight:800;color:var(--az)}
-.pjd{font-size:11px;color:var(--su);margin-top:2px;line-height:1.5}
-.pjd a{color:var(--ro);font-weight:700;font-size:11px}
-.mft{display:flex;gap:9px;flex-wrap:wrap;padding-top:13px;border-top:1px solid var(--bd)}
-.mfb{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;font-size:12px;font-weight:700;padding:11px 14px;border-radius:50px;border:none;cursor:pointer;transition:all .2s;text-decoration:none}
+.pj{display:flex;gap:9px;padding:10px 11px;background:rgba(245,168,0,.07);border:1px solid rgba(245,168,0,.2);border-radius:10px;margin-bottom:8px}
+.pj-ic{width:30px;height:30px;background:var(--ou);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pj-ic svg{width:15px;height:15px;fill:var(--az)}
+.pj-t{font-size:12px;font-weight:800;color:var(--az)}
+.pj-d{font-size:11px;color:var(--su);margin-top:2px;line-height:1.5}
+.pj-d a{color:var(--ro);font-weight:700;font-size:11px}
+.modal-foot{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:12px 24px;border-top:1px solid var(--bd);z-index:550;display:flex;gap:10px;box-shadow:0 -4px 16px rgba(27,46,94,.1)}
+.mfb{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;font-size:13px;font-weight:700;padding:12px;border-radius:50px;border:none;text-decoration:none;transition:opacity .15s}
+.mfb:hover{opacity:.85}
 .mfb svg{width:14px;height:14px}
 .mfv{background:var(--bg);color:var(--ro);border:1.5px solid var(--ro)}
-.mfv:hover{background:var(--ro);color:#fff}
 .mfi{background:var(--az);color:#fff}
-.mfi:hover{background:var(--ro)}
-footer{background:var(--az);color:rgba(255,255,255,.55);padding:32px 24px;text-align:center;border-top:3px solid var(--ou)}
-.fl{font-family:'Arial Black',sans-serif;font-weight:900;font-size:22px;color:#fff;margin-bottom:3px}
+
+/* portais inline */
+.port-pc{font-size:11px;color:var(--su);line-height:1.6;padding:9px 12px;background:rgba(27,46,94,.04);border-left:3px solid var(--ou);border-radius:0 8px 8px 0;margin-bottom:14px}
+.port-ttl{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--az);margin-bottom:9px;padding-bottom:5px;border-bottom:1px solid var(--bd)}
+.port-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.port-card{background:var(--bg);border:1.5px solid var(--bd);border-radius:12px;padding:12px}
+.port-card.med{background:rgba(30,77,183,.06);border-color:rgba(30,77,183,.25)}
+.port-card .pnm{font-size:9px;font-weight:800;text-transform:uppercase;color:var(--su);margin-bottom:4px}
+.port-card .pm2{font-size:20px;font-weight:900;color:var(--az);line-height:1;margin-bottom:6px}
+.port-card.med .pm2{color:var(--ro)}
+.port-card .pdiv{height:1px;background:var(--bd);margin-bottom:6px}
+.port-card .parea{font-size:10px;color:var(--su);margin-bottom:2px}
+.port-card .ptot{font-size:15px;font-weight:900;color:var(--az)}
+.port-card.med .ptot{color:var(--ro)}
+.cen-gr{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.cen{border-radius:12px;padding:14px;border:1.5px solid}
+.cen.pess{background:#fffbeb;border-color:#fde68a}
+.cen.real{background:#f0fdf4;border-color:#bbf7d0}
+.cen-ttl{font-size:12px;font-weight:800;margin-bottom:10px}
+.cen.pess .cen-ttl{color:#92400e}.cen.real .cen-ttl{color:#15803d}
+.cen-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:12px}
+.cen-row .cv{font-weight:700;color:var(--az)}
+.cen-row .cv.r{color:#dc2626}
+.cen-res{margin-top:10px;padding-top:8px;border-top:2px solid rgba(0,0,0,.08)}
+.cen-res .rlbl{font-size:9px;font-weight:800;text-transform:uppercase;margin-bottom:3px}
+.cen.pess .rlbl{color:#92400e}.cen.real .rlbl{color:#15803d}
+.cen-res .rval{font-size:22px;font-weight:900;line-height:1}
+.cen.pess .rval{color:#92400e}.cen.real .rval{color:#15803d}
+.cen-res .rroi{font-size:11px;font-weight:700;margin-top:3px;opacity:.8}
+.cen.pess .rroi{color:#92400e}.cen.real .rroi{color:#15803d}
+.port-nt{font-size:10px;color:var(--su);font-style:italic;line-height:1.55;margin-bottom:12px}
+.port-links{display:flex;gap:8px;flex-wrap:wrap}
+.port-link{font-size:11px;font-weight:700;padding:6px 13px;border-radius:50px;background:var(--bg);border:1.5px solid var(--bd);color:var(--ro);text-decoration:none}
+
+/* float wpp */
+.fwpp{position:fixed;bottom:24px;right:24px;z-index:400;display:flex;align-items:center;gap:10px;background:var(--wp);color:#fff;font-weight:800;font-size:14px;padding:12px 20px 12px 14px;border-radius:50px;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none}
+.fwpp svg{width:22px;height:22px;flex-shrink:0}
+@media(max-width:480px){.fwpp{padding:13px;border-radius:50%;width:52px;height:52px;justify-content:center}.fwpp span{display:none}}
+@media(max-width:540px){.modal-prices{grid-template-columns:1fr 1fr}.mpg{grid-template-columns:1fr 1fr}.avf-gr{grid-template-columns:1fr}.sgr{grid-template-columns:1fr 1fr}.modal-body{padding:18px 14px 90px}.modal-foot{padding:10px 14px}.port-cards{grid-template-columns:1fr 1fr}.cen-gr{grid-template-columns:1fr}}
+
+/* footer */
+footer{background:var(--az);color:rgba(255,255,255,.5);padding:28px 24px;text-align:center;border-top:3px solid var(--ou)}
+.fl{font-family:'Arial Black',sans-serif;font-size:20px;font-weight:900;color:#fff;margin-bottom:2px}
 .fl span{color:var(--ou)}
-.fs{font-size:9px;letter-spacing:4px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:10px}
-.fv{font-size:10px;line-height:1.7;max-width:700px;margin:12px auto 0;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.28)}
-/* mobile full-screen modal */
-@media(max-width:680px){
-  .ov{padding:0!important;align-items:flex-end}
-  .modal{border-radius:20px 20px 0 0;max-height:92vh;overflow-y:auto;margin:0}
-  .mhero{height:160px}
-  .mbdy{padding:14px 14px 80px}
-  .mprs{grid-template-columns:1fr 1fr}
-  .mpgr{grid-template-columns:1fr 1fr}
-  .avfgr{grid-template-columns:1fr}
-  .sgr{grid-template-columns:1fr 1fr}
-  .mft{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:10px 14px;border-top:1px solid var(--bd);z-index:10;box-shadow:0 -4px 16px rgba(27,46,94,.12)}
-}
-@media(max-width:960px){.cgrid2{grid-template-columns:repeat(3,1fr)}.bars{grid-template-columns:repeat(3,1fr)}.mrow{grid-template-columns:1fr}.ctx{max-width:100%}.cgr{grid-template-columns:repeat(2,1fr)}.lpill{display:none}.sgr{grid-template-columns:repeat(2,1fr)}.mprs{grid-template-columns:repeat(2,1fr)}.mpgr{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.hdr{height:56px;padding:0 14px}.cgrid2{grid-template-columns:repeat(2,1fr)}.bars{grid-template-columns:repeat(2,1fr)}.fbar{padding:0}.sbar{padding:8px 14px}.main{padding:16px 14px 48px}.cgr{grid-template-columns:1fr;gap:13px}}
+.fs{font-size:8px;letter-spacing:4px;color:rgba(255,255,255,.35);text-transform:uppercase;margin-bottom:8px}
+.fv{font-size:10px;line-height:1.7;max-width:680px;margin:10px auto 0;padding-top:10px;border-top:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.28)}
 </style>
 </head>
 <body>
+
+<!-- float wpp -->
 <a href="https://wa.me/5521986517152?text=Olá!%20Vi%20imóveis%20de%20leilão%20no%20site%20da%20Medina%20Paes." target="_blank" class="fwpp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   <span>Falar com especialista</span>
 </a>
-<header>
-  <div class="hdr">
-    <div class="logo"><div class="lmp"><span class="m">M</span><span class="p">P</span></div><div class="ltx"><div class="lnm">MEDINA PAES</div><div class="lsb">Imóveis</div></div></div>
-    <div class="hdr-r">
-      <div class="lpill"><span class="dot"></span><span>Atualizado <strong>26/05</strong> · <strong>17</strong> leilões</span></div>
-      <a href="https://wa.me/5521986517152" target="_blank" class="bwpp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
+
+<!-- header -->
+<header class="hdr">
+  <div class="hdr-in">
+    <div class="logo">
+      <div class="logo-mp"><span class="m">M</span><span class="p">P</span></div>
+      <div class="logo-tx"><div class="logo-nm">MEDINA PAES</div><div class="logo-sb">Imóveis</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="pill-live"><span class="dot"></span><span>Atualizado <strong>26/05</strong> · <strong>15</strong> leilões</span></div>
+      <a href="https://wa.me/5521986517152" target="_blank" class="btn-wpp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
     </div>
   </div>
 </header>
 
-<div class="dash">
-  <div class="din">
-    <div class="mrow">
-      <div>
-        <div class="mttl">🇧🇷 Cenário Macro Brasil · Mai/2025</div>
-        <div class="mcards">
-          <div class="mcard"><div class="mcl">Selic <span style="font-size:8px;opacity:.4">BCB</span></div><div class="mcv">10,50%</div><div class="mct dn">↓ em queda</div></div>
-          <div class="mcard"><div class="mcl">IPCA 12m <span style="font-size:8px;opacity:.4">IBGE</span></div><div class="mcv">4,83%</div><div class="mct nt">→ estável</div></div>
-          <div class="mcard"><div class="mcl">Câmbio USD <span style="font-size:8px;opacity:.4">B3</span></div><div class="mcv">R$ 5,14</div><div class="mct nt">→ estável</div></div>
-          <div class="mcard"><div class="mcl">Crédito Imob. <span style="font-size:8px;opacity:.4">BCB</span></div><div class="mcv">+8,2%</div><div class="mct dn">↑ crescimento</div></div>
-        </div>
-      </div>
-      <div class="ctx"><div class="ctxttl">📌 Contexto</div><div class="ctxtx">Selic em queda sinaliza crédito mais barato. Momento favorável para financiar: parcelas tendem a reduzir. IPCA controlado preserva o lucro na revenda.</div></div>
+<!-- filtro linha 1: localidade -->
+<div class="bar1"><div class="bar1-in" id="tabs"></div></div>
+
+<!-- filtro linha 2: contador + sort -->
+<div class="bar2">
+  <div class="bar2-in">
+    <div><span class="cnt" id="cnt"></span><span class="cnt-sub" id="cnt-sub"></span></div>
+    <div class="sorts">
+      <button class="sp on" id="s0">⭐ Melhor score</button>
+      <button class="sp" id="s1">🔻 Maior desconto</button>
+      <button class="sp" id="s2">💰 Menor preço</button>
+      <button class="sp" id="s3">📈 Maior lucro</button>
     </div>
-    <div class="cttl">📊 Imóveis de leilão vs. outros investimentos</div>
-    <div class="cgrid" id="cg"></div>
-    <div class="bars" id="br"></div>
-    <div class="dfn">Fontes: Banco Central · Tesouro Direto · B3 · IFIX · FipeZAP · Secovi-Rio — Mai/2025. Valores informativos.</div>
-    <div class="pjbar" style="margin:0 -24px;padding:0"><div class="pjin"><span class="pjlbl">🚀</span><a class="pjpill" href="https://niteroi.rj.gov.br/prefeito-e-ministro-da-fazenda-anunciam-financiamento-para-o-primeiro-vlt-de-niteroi/" target="_blank">VLT Niterói — R$ 450M (2026)</a><a class="pjpill" href="https://prefeitura.rio/cidade/prefeitura-participa-da-apresentacao-do-novo-projeto-de-expansao-metroviario/" target="_blank">Linha 3 Metrô → São Gonçalo (R$ 28,8B)</a><a class="pjpill" href="https://niteroi.rj.gov.br/niteroi-lanca-plano-estrategico-ate-2050-com-foco-em-inovacao-inclusao-social-e-qualidade-de-vida/" target="_blank">Plano Niterói 2050</a></div></div>
   </div>
 </div>
 
-<div class="fbar"><div class="fbin" id="fbtabs"></div></div>
-<div class="sbar"><div class="sbin"><div><span class="scnt" id="scnt"></span> <span class="ssub" id="ssub"></span></div><div class="spills"><button class="sp on" id="sp0">⭐ Melhor score</button><button class="sp" id="sp1">🔻 Maior desconto</button><button class="sp" id="sp2">💰 Menor preço</button><button class="sp" id="sp3">📈 Maior lucro</button></div></div></div>
-
+<!-- grid -->
 <main class="main">
-  <div id="sn"><div class="csep"><div class="csl"></div><div class="cst">📍 Niterói — RJ</div><div class="csl"></div></div><div class="cgr" id="gn"></div></div>
-  <div id="sg" class="sec2"><div class="csep"><div class="csl"></div><div class="cst">📍 São Gonçalo — RJ</div><div class="csl"></div></div><div class="cgr" id="gg"></div></div>
+  <div id="sn"><div class="sep"><div class="sep-l"></div><div class="sep-t">📍 Niterói — RJ</div><div class="sep-l"></div></div><div class="grid" id="gn"></div></div>
+  <div id="sg" class="sec2"><div class="sep"><div class="sep-l"></div><div class="sep-t">📍 São Gonçalo — RJ</div><div class="sep-l"></div></div><div class="grid" id="gg"></div></div>
 </main>
 
-<footer><div class="fl">M<span>P</span> MEDINA PAES</div><div class="fs">Imóveis</div><p style="font-size:12px;color:rgba(255,255,255,.4)">Especialistas em imóveis de leilão — Niterói e São Gonçalo</p><p class="fv">⚠️ Valores de ROI, custos e comparativos têm caráter informativo. Dados de avaliação e venda extraídos do site da Caixa Econômica Federal em 26/05/2025. Confirme todas as condições na Caixa antes de qualquer decisão.</p></footer>
+<footer>
+  <div class="fl">M<span>P</span> MEDINA PAES</div>
+  <div class="fs">Imóveis</div>
+  <p style="font-size:12px;color:rgba(255,255,255,.4)">Especialistas em imóveis de leilão — Niterói e São Gonçalo</p>
+  <p class="fv">⚠️ Valores de ROI, custos e comparativos têm caráter informativo. Dados extraídos do site da Caixa em 26/05/2025. Confirme todas as condições antes de qualquer decisão.</p>
+</footer>
 
-<div class="ov hid" id="ov">
-  <div class="modal">
-    <div class="mhero"><img id="mi" src="" alt=""><button class="mcls" id="mcls">✕</button><div class="menc hid" id="menc"></div></div>
-    <div class="mbdy">
-      <div class="mtop"><div><div class="mh1" id="mh1"></div><div class="msb" id="msb"></div></div><div id="msc"></div></div>
-      <div class="mtgs" id="mtgs"></div>
-      <div class="mprs" id="mpr"></div>
-      <div class="mpart" id="mpart"></div>
-      <div class="avf" id="mavf"></div>
-      <div class="mtabs"><button class="mtab on" id="t0">Mercado</button><button class="mtab" id="t1">Portais</button><button class="mtab" id="t2">Localidade</button><button class="mtab" id="t3">Projetos</button></div>
-      <div class="tpane on" id="tp0"><div class="sgr" id="mst"></div><div class="tbox" id="mtx"></div></div>
-      <div class="tpane" id="tp1"><div id="mportais"></div></div>
-      <div class="tpane" id="tp2"><a class="mapbtn" id="mmap" href="#" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Ver no Google Maps</a><div class="chips" id="mch"></div><div class="tbox" id="mlo"></div></div>
-      <div class="tpane" id="tp3"><div id="mpj"></div></div>
-      <div class="mft" id="mft"></div>
+<!-- modal tela cheia -->
+<div id="modal-wrap">
+  <button class="modal-close" id="m-cls">✕</button>
+  <div class="modal-hero"><img id="m-img" src="" alt=""></div>
+  <div class="modal-body">
+    <div class="modal-top"><div><div class="modal-h1" id="m-h1"></div><div class="modal-sub" id="m-sub"></div></div><div id="m-sc"></div></div>
+    <div class="modal-tags" id="m-tags"></div>
+    <div class="modal-prices" id="m-prs"></div>
+    <div class="modal-part" id="m-part"></div>
+    <div class="avf-box" id="m-avf"></div>
+    <div class="m-tabs">
+      <button class="m-tab on" data-tab="0">Mercado</button>
+      <button class="m-tab" data-tab="1">Portais</button>
+      <button class="m-tab" data-tab="2">Localidade</button>
+      <button class="m-tab" data-tab="3">Projetos</button>
     </div>
+    <div class="tpane on" id="tp0"><div class="sgr" id="m-st"></div><div class="tbox" id="m-tx"></div></div>
+    <div class="tpane" id="tp1"><div id="m-portais"></div></div>
+    <div class="tpane" id="tp2"><a class="map-btn" id="m-map" href="#" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Ver no Google Maps</a><div class="chips" id="m-chips"></div><div class="tbox" id="m-loc"></div></div>
+    <div class="tpane" id="tp3"><div id="m-pj"></div></div>
   </div>
+  <div class="modal-foot" id="m-foot"></div>
 </div>
 
 <script>
-var WPP="5521986517152", SELIC=10.5;
+var WPP='5521986517152', SELIC=10.5;
+var brl=function(v){return new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(v)};
+var pct=function(a,b){return(((b-a)/b)*100).toFixed(0)};
 
-function brl(v){return new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0}).format(v)}
-function pct(a,b){return(((b-a)/b)*100).toFixed(0)}
-function doc(ci,cx){return Math.round(cx*0.035)}
-function ent(cx,fin){return fin?Math.round(cx*0.10):0}
-
-// ── DADOS REAIS CAIXA — 26/05/2025 ───────────────────────────────────────────
+// ── DADOS ──────────────────────────────────────────────────────────────────
 var D=[
-  {id:"8444419293320",ti:"Apartamento · Centro, Niterói",         de:"1 quarto · 1 vaga · 120m² · Rua Dr. Celestino, 102 Apto 1101",                    br:"Centro",           ci:"niteroi",    av:400000,    cx:254925.72, ar:120,   ri:"baixo",en:null,tg:["fin","online","fgts"],tx:"Descrição Caixa: Quarto, 1 Vaga na Garagem. Pagamento: recursos próprios, FGTS e financiamento SBPE."},
-  {id:"0000010207826",ti:"Apartamento · Centro, Niterói",         de:"56,11m² · Rua José Clemente, 100 Apto 404",                                        br:"Centro",           ci:"niteroi",    av:301000,    cx:137842.79, ar:56.11, ri:"medio", en:null,tg:["fin","online"],       tx:"Descrição Caixa: sem descrição. Pagamento: recursos próprios e financiamento SBPE."},
-  {id:"0000010207829",ti:"Sala Comercial · Centro, Niterói",      de:"139m² · Rua José Clemente, 100 Sl 403",                                            br:"Centro",           ci:"niteroi",    av:491000,    cx:239843.40, ar:139,   ri:"medio", en:null,tg:["fin","online"],       tx:"Descrição Caixa: sem descrição. Tipo: Sala. Pagamento: recursos próprios e financiamento SBPE."},
-  {id:"1555518585837",ti:"Apartamento 3 Quartos · Icaraí",        de:"3 quartos · 1 vaga · 103m² · Rua Dr. Paulo Cesar, 179 Apto 601",                    br:"Icaraí",           ci:"niteroi",    av:995000,    cx:634127.73, ar:103,   ri:"baixo",en:null,tg:["fin","online"],       tx:"Descrição Caixa: 3 Quartos, 1 Vaga na Garagem, Área de Serviço, 2 Wc, Sala, Cozinha. Imóvel com gravame/penhora averbada — regularização por conta do adquirente."},
-  {id:"0000010171274",ti:"Loja · Icaraí, Niterói",                de:"33,68m² · Rua Prof. Miguel Couto, 479 Lj 201",                                     br:"Icaraí",           ci:"niteroi",    av:300000,    cx:196185.12, ar:33.68, ri:"alto",  en:null,tg:[],                    tx:"Descrição Caixa: sem descrição. Tipo: Loja. Pagamento: exclusivamente à vista."},
-  {id:"1444420915292",ti:"Casa · Itaipu, Niterói",                de:"450m² privativo · terreno 450m² · Av. Prof. Romanda Gonçalves, 2681",              br:"Itaipu",           ci:"niteroi",    av:880000,    cx:560836.58, ar:450,   ri:"medio", en:null,tg:["fin","online"],       tx:"Descrição Caixa: sem descrição. Casa com área não averbada — regularização por conta do adquirente."},
-  {id:"1444419445911",ti:"Casa 3 Quartos · Itaipu, Niterói",      de:"3 quartos · 211m² · terreno 360m² · Rua Prof. Angeolina Petropolis, 55",           br:"Itaipu",           ci:"niteroi",    av:751004.94, cx:442729.22, ar:211,   ri:"baixo",en:null,tg:["fin","online","fgts"],tx:"Descrição Caixa: 3 Quartos, Área de Serviço, 2 Wc, 2 Salas, Lavabo, Cozinha. Pagamento: recursos próprios, FGTS e financiamento SBPE."},
-  {id:"8444409347125",ti:"Apartamento 2 Quartos · Barradas",      de:"2 quartos · 47m² · Rua Benjamin Constant, 442 Apto 505 Bl 06",                     br:"Largo do Barradas",ci:"niteroi",    av:180000,    cx:108389.57, ar:47,    ri:"baixo",en:null,tg:["fgts"],              tx:"Descrição Caixa: 2 Quartos, Área de Serviço, Wc, Sala, Cozinha. Pagamento: recursos próprios e FGTS."},
-  {id:"1555527013638",ti:"Apartamento 2 Quartos · Maçeió",        de:"2 quartos · 1 vaga · 57m² · Est. Eng. Pacheco de Carvalho, 1251 Apto 404 Bl 01",   br:"Maçeió",           ci:"niteroi",    av:427210.43, cx:265460.63, ar:57,    ri:"baixo",en:null,tg:["fin","online","fgts"],tx:"Descrição Caixa: 2 Quartos, 1 Vaga na Garagem, Área de Serviço, 2 Wc, Sala, Cozinha. Pagamento: recursos próprios, FGTS e financiamento SBPE."},
-  {id:"1444403164179",ti:"Vaga de Garagem · Santa Rosa",          de:"1 vaga · 0,01m² averbado · Rua Noronha Torrezão, 335 Apto 1401 Bl 02",            br:"Santa Rosa",       ci:"niteroi",    av:285000,    cx:181634.58, ar:null,  ri:"medio", en:null,tg:["fin","online","fgts"],tx:"⚠️ Descrição Caixa: 1 Vaga na Garagem. Área averbada: 0,01m². Verificar regularização antes da proposta."},
-  {id:"8444409733890",ti:"Apartamento 2 Quartos · Santa Rosa",    de:"2 quartos · 52m² · Rua Noronha Torrezão, 407 Apto 604 Bl 12",                      br:"Santa Rosa",       ci:"niteroi",    av:190000,    cx:119590.43, ar:52,    ri:"medio", en:null,tg:["fgts"],              tx:"Descrição Caixa: 2 Quartos, Wc, Sala, Cozinha. Pagamento: recursos próprios e FGTS."},
-  {id:"8290500003892",ti:"Apartamento 2 Quartos · Alcântara",     de:"2 quartos · 60m² · Rua Dr. Alfredo Backer, 458 Apto 204 Bl 08 B",                  br:"Alcântara",        ci:"saogoncalo", av:178000,    cx:78883.73,  ar:60,    ri:"baixo",en:null,tg:["fgts"],              tx:"Descrição Caixa: 2 Quartos, Wc, Sala, Cozinha. Pagamento: recursos próprios e FGTS."},
-  {id:"8444422392856",ti:"Apartamento 2 Quartos · Marambaia",     de:"2 quartos · 1 vaga · 63,28m² · Rua Miniapolis, 182 Apto 303",                       br:"Marambaia",        ci:"saogoncalo", av:132000,    cx:58350.13,  ar:63.28, ri:"baixo",en:null,tg:["fgts"],              tx:"Descrição Caixa: 2 Quartos, 1 Vaga na Garagem, Wc, Sala, Cozinha. Pagamento: recursos próprios e FGTS."},
-  {id:"8444422862364",ti:"Apartamento 2 Quartos · Marambaia",     de:"2 quartos · 1 vaga · 59,09m² · Rua Miniapolis, 182 Apto 301",                       br:"Marambaia",        ci:"saogoncalo", av:146411.87, cx:14641.18,  ar:59.09, ri:"alto",  en:null,tg:["fgts"],              tx:"⚠️ Descrição Caixa: 2 Quartos, 1 Vaga na Garagem, Área de Serviço, Wc, Sala, Cozinha. Gravame/penhora averbada — regularização por conta do adquirente."},
-  {id:"8444425826091",ti:"Apartamento 2 Quartos · Marambaia",     de:"2 quartos · 1 vaga · 64m² · Rua Miniapolis, 182 Un 06",                             br:"Marambaia",        ci:"saogoncalo", av:106000,    cx:43926.07,  ar:64,    ri:"medio", en:null,tg:["fgts"],              tx:"Descrição Caixa: 2 Quartos, 1 Vaga na Garagem, Wc, Sala, Cozinha. Pagamento: recursos próprios e FGTS."},
-  {id:"8444424859557",ti:"Apartamento 2 Quartos · Mutondo",       de:"2 quartos · 1 vaga · 48,56m² · Rua Dr. Alfredo Backer, 601 Apto 402 Bl 02",        br:"Mutondo",          ci:"saogoncalo", av:132000,    cx:76464.05,  ar:48.56, ri:"alto",  en:null,tg:[],                    tx:"⚠️ Descrição Caixa: 2 Quartos, 1 Vaga na Garagem, Área de Serviço, Wc, Sala, Cozinha. Gravame/penhora averbada. Pagamento: exclusivamente à vista."},
-  {id:"1555530064248",ti:"Apartamento 2 Quartos · Nova Cidade",   de:"2 quartos · 1 vaga · 43,38m² · Rua Vicente de Lima Cleto, 451 Apto 404 Bl 06",     br:"Nova Cidade",      ci:"saogoncalo", av:175000,    cx:77554.23,  ar:43.38, ri:"medio", en:null,tg:["fgts"],              tx:"Descrição Caixa: 2 Quartos, 1 Vaga na Garagem, Wc, Sala, Cozinha. Pagamento: recursos próprios e FGTS."}
+  {id:'8444419293320',ti:'Apartamento · Centro',        de:'1 quarto · 1 vaga · 120m² · Rua Dr. Celestino, 102',           br:'Centro',           ci:'niteroi',    av:400000,    cx:254925.72,ar:120,  ri:'baixo',tg:['fin','online','fgts'],tx:'Descrição Caixa: Quarto, 1 Vaga na Garagem. Pagamento: recursos próprios, FGTS e financiamento SBPE.'},
+
+  {id:'0000010207829',ti:'Sala Comercial · Centro',     de:'139m² · Rua José Clemente, 100 Sl 403',                         br:'Centro',           ci:'niteroi',    av:491000,    cx:239843.40,ar:139,  ri:'medio', tg:['fin','online'],      tx:'Descrição Caixa: Tipo Sala. Pagamento: recursos próprios e financiamento SBPE.'},
+  {id:'1555518585837',ti:'Apartamento 3 Quartos · Icaraí',de:'3 quartos · 1 vaga · 103m² · Rua Dr. Paulo Cesar, 179',      br:'Icaraí',           ci:'niteroi',    av:995000,    cx:634127.73,ar:103,  ri:'baixo', tg:['fin','online'],      tx:'Descrição Caixa: 3 Quartos, 1 Vaga, Área de Serviço, 2 Wc, Sala, Cozinha. Gravame/penhora averbada.'},
+  {id:'0000010171274',ti:'Loja · Icaraí',               de:'33,68m² · Rua Prof. Miguel Couto, 479 Lj 201',                  br:'Icaraí',           ci:'niteroi',    av:300000,    cx:196185.12,ar:33,   ri:'alto',  tg:[],                   tx:'Descrição Caixa: Tipo Loja. Pagamento: exclusivamente à vista.'},
+  {id:'1444420915292',ti:'Casa · Itaipu',               de:'450m² · terreno 450m² · Av. Prof. Romanda Gonçalves, 2681',     br:'Itaipu',           ci:'niteroi',    av:880000,    cx:560836.58,ar:450,  ri:'medio', tg:['fin','online'],      tx:'Descrição Caixa: sem descrição. Área não averbada — regularização por conta do adquirente.'},
+  {id:'1444419445911',ti:'Casa 3 Quartos · Itaipu',     de:'3 quartos · 211m² · terreno 360m² · Rua Prof. Angeolina, 55',  br:'Itaipu',           ci:'niteroi',    av:751004.94, cx:442729.22,ar:211,  ri:'baixo', tg:['fin','online','fgts'],tx:'Descrição Caixa: 3 Quartos, Área de Serviço, 2 Wc, 2 Salas, Lavabo, Cozinha.'},
+  {id:'8444409347125',ti:'Apartamento 2 Quartos · Barradas',de:'2 quartos · 47m² · Rua Benjamin Constant, 442 Apto 505',   br:'Largo do Barradas',ci:'niteroi',    av:180000,    cx:108389.57,ar:47,   ri:'baixo', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, Área de Serviço, Wc, Sala, Cozinha.'},
+  {id:'1555527013638',ti:'Apartamento 2 Quartos · Maçeió',de:'2 quartos · 1 vaga · 57m² · Est. Pacheco de Carvalho, 1251', br:'Maçeió',           ci:'niteroi',    av:427210.43, cx:265460.63,ar:57,   ri:'baixo', tg:['fin','online','fgts'],tx:'Descrição Caixa: 2 Quartos, 1 Vaga, Área de Serviço, 2 Wc, Sala, Cozinha.'},
+  {id:'1444403164179',ti:'Vaga de Garagem · Santa Rosa', de:'1 vaga · 0,01m² · Rua Noronha Torrezão, 335 Apto 1401',       br:'Santa Rosa',       ci:'niteroi',    av:285000,    cx:181634.58,ar:null, ri:'medio', tg:['fin','online','fgts'],tx:'⚠️ Descrição Caixa: 1 Vaga na Garagem. Área averbada: 0,01m².'},
+  {id:'8444409733890',ti:'Apartamento 2 Quartos · Santa Rosa',de:'2 quartos · 52m² · Rua Noronha Torrezão, 407 Apto 604',  br:'Santa Rosa',       ci:'niteroi',    av:190000,    cx:119590.43,ar:52,   ri:'medio', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, Wc, Sala, Cozinha.'},
+
+  {id:'8444422392856',ti:'Apartamento 2 Quartos · Marambaia',de:'2 quartos · 1 vaga · 63m² · Rua Miniapolis, 182 Apto 303',br:'Marambaia',        ci:'saogoncalo', av:132000,    cx:58350.13, ar:63,   ri:'baixo', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, 1 Vaga, Wc, Sala, Cozinha.'},
+  {id:'8444422862364',ti:'Apartamento 2 Quartos · Marambaia',de:'2 quartos · 1 vaga · 59m² · Rua Miniapolis, 182 Apto 301',br:'Marambaia',        ci:'saogoncalo', av:146411.87, cx:14641.18, ar:59,   ri:'alto',  tg:['fgts'],             tx:'⚠️ Descrição Caixa: 2 Quartos, 1 Vaga, Área de Serviço, Wc, Sala, Cozinha. Gravame/penhora averbada.'},
+  {id:'8444425826091',ti:'Apartamento 2 Quartos · Marambaia',de:'2 quartos · 1 vaga · 64m² · Rua Miniapolis, 182 Un 06',  br:'Marambaia',        ci:'saogoncalo', av:106000,    cx:43926.07, ar:64,   ri:'medio', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, 1 Vaga, Wc, Sala, Cozinha.'},
+  {id:'8444424859557',ti:'Apartamento 2 Quartos · Mutondo',  de:'2 quartos · 1 vaga · 48m² · Rua Dr. Alfredo Backer, 601',br:'Mutondo',          ci:'saogoncalo', av:132000,    cx:76464.05, ar:48,   ri:'alto',  tg:[],                   tx:'⚠️ Descrição Caixa: 2 Quartos, 1 Vaga, Área de Serviço, Wc, Sala. Gravame/penhora. À vista.'},
+  {id:'1555530064248',ti:'Apartamento 2 Quartos · Nova Cidade',de:'2 quartos · 1 vaga · 43m² · Rua Vicente de Lima Cleto, 451',br:'Nova Cidade',  ci:'saogoncalo', av:175000,    cx:77554.23, ar:43,   ri:'medio', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, 1 Vaga, Wc, Sala, Cozinha.'}
 ];
 
-// score — calculado ANTES de qualquer render
-function calcSc(op){
-  var d=(op.av-op.cx)/op.av*100;
-  var dc=doc(op.ci,op.cx);
-  var lp=(op.av-op.cx-dc)/op.cx*100;
-  var rp=op.ri==='baixo'?100:op.ri==='medio'?55:20;
-  var fp=op.tg.indexOf('fin')>=0?100:40;
-  return Math.round(Math.min(d/45*100,100)*0.40+Math.min(lp/40*100,100)*0.30+rp*0.20+fp*0.10);
+// score
+for(var _=0;_<D.length;_++){
+  var _o=D[_],_d=(_o.av-_o.cx)/_o.av*100,_dc=Math.round(_o.cx*0.035);
+  var _lp=(_o.av-_o.cx-_dc)/_o.cx*100;
+  var _rp=_o.ri==='baixo'?100:_o.ri==='medio'?55:20;
+  var _fp=_o.tg.indexOf('fin')>=0?100:40;
+  _o.sc=Math.round(Math.min(_d/45*100,100)*.4+Math.min(_lp/40*100,100)*.3+_rp*.2+_fp*.1);
 }
-for(var i=0;i<D.length;i++){D[i].sc=calcSc(D[i]);}
-
-// ROI médio real
-var tot=0; for(var i=0;i<D.length;i++){tot+=(D[i].av-D[i].cx)/D[i].cx*100;} var mROI=Math.round(tot/D.length);
-
-// comparativo
-var COMPS=[
-  {ic:"🏠",nm:"Leilão Imóvel",sb:"Média "+D.length+" ofertas · ROI",roi:mROI,hl:true},
-  {ic:"📈",nm:"Selic",sb:"Renda fixa pós · BCB",roi:10.5,hl:false},
-  {ic:"🏛",nm:"Tesouro IPCA+",sb:"NTN-B 2035",roi:6.9,hl:false},
-  {ic:"💼",nm:"CDB 100% CDI",sb:"Liquidez diária",roi:10.3,hl:false},
-  {ic:"📊",nm:"Ibovespa",sb:"Média 5 anos · B3",roi:9.2,hl:false},
-  {ic:"🏘",nm:"FII (IFIX)",sb:"Dividend yield · B3",roi:8.4,hl:false}
-];
-var maxR=0; for(var i=0;i<COMPS.length;i++){if(COMPS[i].roi>maxR)maxR=COMPS[i].roi;}
-var cgEl=document.getElementById('cg'),brEl=document.getElementById('br');
-for(var i=0;i<COMPS.length;i++){
-  var c=COMPS[i];
-  var cd=document.createElement('div');cd.className='cc '+(c.hl?'hl':'nm');
-  cd.innerHTML='<div class="ccic">'+c.ic+'</div><div class="ccnm">'+c.nm+'</div><div class="ccvl">'+c.roi+'%</div><div class="ccsb">'+c.sb+'</div>';
-  cgEl.appendChild(cd);
-  var bw=document.createElement('div');bw.className='bw';
-  bw.innerHTML='<div class="bl">'+c.nm+'</div><div class="bt"><div class="bf '+(c.hl?'go':'gr')+'" style="width:'+Math.round(c.roi/maxR*100)+'%"></div></div>';
-  brEl.appendChild(bw);
-}
-
-// preços m² portais por bairro
-var M2={
-  "Icaraí":            {zap:8853,  qa:5664, src:"ZAP Mai/25 · QuintoAndar Mai/25"},
-  "Centro":            {zap:5200,  qa:4800, src:"DataZAP Niterói Mai/25"},
-  "Itaipu":            {zap:5694,  qa:5000, src:"ZAP casas Itaipu Mai/25"},
-  "Maçeió":            {zap:5800,  qa:5200, src:"DataZAP região oceânica Mai/25"},
-  "Largo do Barradas": {zap:4800,  qa:4200, src:"DataZAP Niterói Mai/25"},
-  "Santa Rosa":        {zap:5500,  qa:4900, src:"ZAP Santa Rosa Mai/25"},
-  "Alcântara":         {zap:3480,  qa:3200, src:"Imovelweb Alcântara SG Mai/25"},
-  "Marambaia":         {zap:2900,  qa:2600, src:"ZAP/Buskaza Marambaia SG Mai/25"},
-  "Mutondo":           {zap:2700,  qa:2400, src:"DataZAP São Gonçalo Mai/25"},
-  "Nova Cidade":       {zap:2800,  qa:2500, src:"DataZAP São Gonçalo Mai/25"}
-};
 
 // cidade info
 var MC={
-  niteroi:{m2v:"R$ 7.730/m²",m2a:"R$ 34/m²",val:"+6,99% (12 m.)",rent:"~0,5–0,7% a.m.",dem:"Alta",itb:"ITBI 2% + cartório ~1,5%",inf:"Niterói: IDH-M 0,837, +500 linhas de ônibus, barcas para o Rio (~20 min), ciclovias em expansão e acesso à Ponte Rio-Niterói.",chips:["🚌 +500 linhas de ônibus","⛴ Barcas p/ Rio (20 min)","🚲 Ciclovias em expansão","🏥 HU-UFF","🎓 UFF + UERJ","🏖 Praia de Icaraí"],pj:[{t:"VLT Niterói — R$ 450M",d:"5 km, 10 estações, obras 2026.",l:"https://niteroi.rj.gov.br/prefeito-e-ministro-da-fazenda-anunciam-financiamento-para-o-primeiro-vlt-de-niteroi/"},{t:"Linha 3 do Metrô — R$ 28,8B",d:"Praça XV → São Gonçalo, 31 estações.",l:"https://prefeitura.rio/cidade/prefeitura-participa-da-apresentacao-do-novo-projeto-de-expansao-metroviario/"},{t:"Plano Niterói 2050",d:"Revitalização do Centro, ciclovias, ônibus elétricos.",l:"https://niteroi.rj.gov.br/niteroi-lanca-plano-estrategico-ate-2050-com-foco-em-inovacao-inclusao-social-e-qualidade-de-vida/"}]},
-  saogoncalo:{m2v:"~R$ 3.200/m²",m2a:"R$ 22/m²",val:"Crescente 2025",rent:"~0,7–0,9% a.m.",dem:"Alta (crescente)",itb:"ITBI 2% + cartório ~1,5%",inf:"São Gonçalo: 2º município mais populoso do RJ (~1,1M hab.), polo comercial em Alcântara, BR-101 e acesso à Ponte.",chips:["🚌 Linhas p/ Niterói e Rio","🛣 BR-101 e acesso à Ponte","🏪 Polo comercial Alcântara","🏥 H.E. Alberto Torres","🌆 2º mais populoso do RJ"],pj:[{t:"Linha 3 do Metrô até Guaxindiba",d:"Conectará SG ao Rio via Niterói.",l:"https://prefeitura.rio/cidade/prefeitura-participa-da-apresentacao-do-novo-projeto-de-expansao-metroviario/"},{t:"Terminal VLT em Neves",d:"Integração com VLT de Niterói sem nova tarifa.",l:"https://www.atribunarj.com.br/materia/vlt-de-niteroi-comecara-a-ser-construido-em-2026-afirma-rodrigo-neves/"}]}
+  niteroi:{m2v:'R$ 7.730/m²',m2a:'R$ 34/m²',val:'+6,99% (12m)',rent:'~0,5–0,7% a.m.',dem:'Alta',itb:'ITBI 2% + cartório ~1,5%',inf:'Niterói: IDH-M 0,837, +500 linhas de ônibus, barcas p/ Rio (~20min), ciclovias em expansão.',chips:['🚌 +500 linhas','⛴ Barcas p/ Rio','🚲 Ciclovias','🏥 HU-UFF','🎓 UFF+UERJ'],pj:[{t:'VLT Niterói — R$450M',d:'5km, 10 estações, obras 2026.',l:'https://niteroi.rj.gov.br/prefeito-e-ministro-da-fazenda-anunciam-financiamento-para-o-primeiro-vlt-de-niteroi/'},{t:'Linha 3 Metrô — R$28,8B',d:'Praça XV→São Gonçalo, 31 estações.',l:'https://prefeitura.rio/cidade/prefeitura-participa-da-apresentacao-do-novo-projeto-de-expansao-metroviario/'},{t:'Plano Niterói 2050',d:'Revitalização do Centro, ciclovias.',l:'https://niteroi.rj.gov.br/niteroi-lanca-plano-estrategico-ate-2050-com-foco-em-inovacao-inclusao-social-e-qualidade-de-vida/'}]},
+  saogoncalo:{m2v:'~R$ 3.200/m²',m2a:'R$ 22/m²',val:'Crescente 2025',rent:'~0,7–0,9% a.m.',dem:'Alta (crescente)',itb:'ITBI 2% + cartório ~1,5%',inf:'São Gonçalo: 2º município mais populoso do RJ (~1,1M hab.), polo comercial em Alcântara.',chips:['🚌 Linhas p/ Niterói e Rio','🛣 BR-101','🏪 Polo Alcântara','🏥 H.E. Alberto Torres'],pj:[{t:'Linha 3 Metrô até Guaxindiba',d:'Conectará SG ao Rio via Niterói.',l:'https://prefeitura.rio/cidade/prefeitura-participa-da-apresentacao-do-novo-projeto-de-expansao-metroviario/'},{t:'Terminal VLT em Neves',d:'Integração com VLT de Niterói.',l:'https://www.atribunarj.com.br/materia/vlt-de-niteroi-comecara-a-ser-construido-em-2026-afirma-rodrigo-neves/'}]}
+};
+var M2={
+  'Icaraí':{zap:8853,qa:5664,src:'ZAP·QuintoAndar Mai/25'},
+  'Centro':{zap:5200,qa:4800,src:'DataZAP Niterói Mai/25'},
+  'Itaipu':{zap:5694,qa:5000,src:'ZAP Itaipu Mai/25'},
+  'Maçeió':{zap:5800,qa:5200,src:'DataZAP oceânica Mai/25'},
+  'Largo do Barradas':{zap:4800,qa:4200,src:'DataZAP Niterói Mai/25'},
+  'Santa Rosa':{zap:5500,qa:4900,src:'ZAP Santa Rosa Mai/25'},
+  'Alcântara':{zap:3480,qa:3200,src:'Imovelweb SG Mai/25'},
+  'Marambaia':{zap:2900,qa:2600,src:'ZAP Marambaia SG Mai/25'},
+  'Mutondo':{zap:2700,qa:2400,src:'DataZAP SG Mai/25'},
+  'Nova Cidade':{zap:2800,qa:2500,src:'DataZAP SG Mai/25'}
 };
 
 // SVGs
-var wSvg='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
-var eSvg='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
-var tH={fin:'<span class="tag tfin">🏦 Financiamento</span>',online:'<span class="tag tonl">💻 Venda Online</span>',fgts:'<span class="tag tfgt">✅ FGTS</span>'};
-function rCls(r){return r==='baixo'?'tbx':r==='medio'?'tmd':'tal';}
-function rLbl(r){return r==='baixo'?'🟢 Baixo Risco':r==='medio'?'🟡 Médio Risco':'🔴 Alto Risco';}
-function sCls(s){return s>=80?'scs':s>=65?'sca':s>=50?'scb2':'scc';}
-function sLbl(s){return (s>=80?'⭐':s>=65?'✅':'⚠️')+' Score '+s;}
+var wSVG='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
+var eSVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+var TH={fin:'<span class="tag t-fin">🏦 Financiamento</span>',online:'<span class="tag t-onl">💻 Venda Online</span>',fgts:'<span class="tag t-fgt">✅ FGTS</span>'};
+function rCls(r){return r==='baixo'?'t-bx':r==='medio'?'t-md':'t-al'}
+function rLbl(r){return r==='baixo'?'🟢 Baixo Risco':r==='medio'?'🟡 Médio Risco':'🔴 Alto Risco'}
+function sCls(s){return s>=80?'t-sc-s':s>=65?'t-sc-a':s>=50?'t-sc-b':'t-sc-c'}
+function sLbl(s){return (s>=80?'⭐':s>=65?'✅':'⚠️')+' Score '+s}
 
-function loadImg(el,id){
-  var urls=['imagens/'+id+'.jpg'];
-  var sfx=['21','22','23','1',''];
-  for(var i=0;i<sfx.length;i++){urls.push('https://api.allorigins.win/raw?url='+encodeURIComponent('https://venda-imoveis.caixa.gov.br/fotos/F'+id+sfx[i]+'.jpg'));}
-  var idx=0;
-  function t(){
-    if(idx>=urls.length){noph(el);return;}
-    el.onerror=function(){idx++;t();};
-    el.onload=function(){var sk=el.parentNode&&el.parentNode.querySelector('.sk');if(sk)sk.style.display='none';};
-    el.src=urls[idx];
+// ── ESTADO
+var aba='todos', sort='score';
+
+function filtered(){
+  var r=[];
+  for(var i=0;i<D.length;i++){
+    if(aba==='niteroi'&&D[i].ci!=='niteroi')continue;
+    if(aba==='saogoncalo'&&D[i].ci!=='saogoncalo')continue;
+    r.push(D[i]);
   }
-  t();
-}
-function noph(el){
-  el.style.display='none';
-  var w=el.parentNode;if(!w||w.querySelector('.noph'))return;
-  var ph=document.createElement('div');ph.className='noph';
-  ph.innerHTML='<svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-8.5-5.5l-3 3.86L7 14l-3 4h16l-5-6.5z"/></svg><span>Foto não disponível</span>';
-  w.appendChild(ph);
-  var sk=w.querySelector('.sk');if(sk)sk.style.display='none';
+  r.sort(function(a,b){
+    if(sort==='score')    return (b.sc||0)-(a.sc||0);
+    if(sort==='desconto') return (b.av-b.cx)/b.av-(a.av-a.cx)/a.av;
+    if(sort==='preco')    return a.cx-b.cx;
+    return (b.av-b.cx-Math.round(b.cx*.035))-(a.av-a.cx-Math.round(a.cx*.035));
+  });
+  return r;
 }
 
-// abas
-var abaAtiva='todos', sortAtivo='score';
-var ABAS=[
-  {id:'todos',     ic:'🏠',lb:'Todos',              f:function(o){return true;}},
-  {id:'niteroi',   ic:'📍',lb:'Niterói',            f:function(o){return o.ci==='niteroi';}},
-  {id:'saogoncalo',ic:'📍',lb:'São Gonçalo',        f:function(o){return o.ci==='saogoncalo';}},
-  {id:'sep'},
-  {id:'retorno',   ic:'📈',lb:'Maior Retorno',      f:function(o){return o.sc>=70;},  gd:true},
-  {id:'iniciante', ic:'💡',lb:'Menor Investimento', f:function(o){return o.cx<=160000;},gd:true},
-  {id:'baixo',     ic:'🟢',lb:'Baixo Risco',        f:function(o){return o.ri==='baixo';},gd:true}
-];
-
-function renderAbas(){
-  var cont=document.getElementById('fbtabs');cont.innerHTML='';
-  for(var i=0;i<ABAS.length;i++){
-    var a=ABAS[i];
-    if(a.sep){var s=document.createElement('div');s.className='fsep';cont.appendChild(s);continue;}
-    var n=0;for(var j=0;j<D.length;j++){if(a.f(D[j]))n++;}
+// ── RENDER TABS
+function renderTabs(){
+  var c=document.getElementById('tabs');c.innerHTML='';
+  var defs=[
+    {id:'todos',lb:'🏠 Todos'},
+    {id:'niteroi',lb:'📍 Niterói'},
+    {id:'saogoncalo',lb:'📍 São Gonçalo'}
+  ];
+  for(var i=0;i<defs.length;i++){
+    var prev=aba; aba=defs[i].id;
+    var n=filtered().length;
+    aba=prev;
     var btn=document.createElement('button');
-    btn.className='ftab'+(a.gd?' gd':'')+(abaAtiva===a.id?' on':'');
-    btn.innerHTML=a.ic+' '+a.lb+' <span class="tc">'+n+'</span>';
-    (function(aid){btn.addEventListener('click',function(){abaAtiva=aid;renderAbas();renderCards();});})(a.id);
-    cont.appendChild(btn);
+    btn.className='tab'+(aba===defs[i].id?' on':'');
+    btn.innerHTML=defs[i].lb+' <span class="n">'+n+'</span>';
+    btn.setAttribute('data-a',defs[i].id);
+    c.appendChild(btn);
   }
+  c.onclick=function(e){
+    var t=e.target.closest('[data-a]');
+    if(!t)return;
+    aba=t.getAttribute('data-a');
+    renderTabs();
+    renderCards();
+  };
 }
 
-// sorts — sem chamar funções externas para evitar erros de escopo
-var SORTS={
-  score:   function(a,b){return (b.sc||0)-(a.sc||0);},
-  desconto:function(a,b){return (b.av-b.cx)/b.av-(a.av-a.cx)/a.av;},
-  preco:   function(a,b){return a.cx-b.cx;},
-  lucro:   function(a,b){var da=Math.round(a.cx*0.035),db=Math.round(b.cx*0.035);return (b.av-b.cx-db)-(a.av-a.cx-da);}
-};
-
-function setSort(s){
-  sortAtivo=s;
-  var ids=['sp0','sp1','sp2','sp3'];
-  for(var i=0;i<ids.length;i++)document.getElementById(ids[i]).classList.remove('on');
-  var map={score:'sp0',desconto:'sp1',preco:'sp2',lucro:'sp3'};
-  document.getElementById(map[s]).classList.add('on');
-  renderCards();
-}
-
+// ── RENDER CARDS
 function renderCards(){
-  var aba=null;
-  for(var i=0;i<ABAS.length;i++){if(ABAS[i].id===abaAtiva){aba=ABAS[i];break;}}
-  if(!aba||!aba.f)return;
-
-  var filtered=[];
-  for(var i=0;i<D.length;i++){if(aba.f(D[i]))filtered.push(D[i]);}
-  filtered.sort(SORTS[sortAtivo]);
-
+  var f=filtered();
+  var nit=[],sg=[];
+  for(var i=0;i<f.length;i++){(f[i].ci==='niteroi'?nit:sg).push(f[i]);}
   var gn=document.getElementById('gn'),gg=document.getElementById('gg');
   gn.innerHTML='';gg.innerHTML='';
-
-  var nit=[],sg=[];
-  for(var i=0;i<filtered.length;i++){
-    if(filtered[i].ci==='niteroi')nit.push(filtered[i]);else sg.push(filtered[i]);
-  }
-
-  // mostrar/ocultar seções
-  var snEl=document.getElementById('sn'), sgEl=document.getElementById('sg');
-  snEl.style.display=nit.length?'':'none';
-  sgEl.style.display=sg.length?'':'none';
-
-  // separadores de cidade: só mostrar na aba Todos
-  var snSep=document.querySelector('#sn .csep'), sgSep=document.querySelector('#sg .csep');
-  if(snSep)snSep.style.display=(abaAtiva==='todos'&&nit.length)?'flex':'none';
-  if(sgSep)sgSep.style.display=(abaAtiva==='todos'&&sg.length)?'flex':'none';
-
+  document.getElementById('sn').style.display=nit.length?'':'none';
+  document.getElementById('sg').style.display=sg.length?'':'none';
+  var snSep=document.querySelector('#sn .sep'),sgSep=document.querySelector('#sg .sep');
+  if(snSep)snSep.style.display=(aba==='todos'&&nit.length)?'flex':'none';
+  if(sgSep)sgSep.style.display=(aba==='todos'&&sg.length)?'flex':'none';
   for(var i=0;i<nit.length;i++)gn.appendChild(mkCard(nit[i]));
   for(var i=0;i<sg.length;i++)gg.appendChild(mkCard(sg[i]));
-
-  var lbl={score:'por score de oportunidade',desconto:'por maior desconto',preco:'por menor preço',lucro:'por maior lucro líquido'};
-  document.getElementById('scnt').textContent=filtered.length+' leilõe'+(filtered.length===1?'':'s');
-  document.getElementById('ssub').textContent='· ordenado '+lbl[sortAtivo];
+  var lbl={score:'por score',desconto:'por maior desconto',preco:'por menor preço',lucro:'por maior lucro'};
+  document.getElementById('cnt').textContent=f.length+' leilõe'+(f.length===1?'':'s');
+  document.getElementById('cnt-sub').textContent=' · '+lbl[sort];
 }
 
+// ── MAKE CARD
 function mkCard(op){
   var fin=op.tg.indexOf('fin')>=0;
-  var lc=op.av-op.cx, dc=doc(op.ci,op.cx), en2=ent(op.cx,fin);
-  var ll=lc-dc, d=pct(op.cx,op.av), roi=((ll/op.cx)*100).toFixed(0);
-  var total=en2+dc;
+  var dc=Math.round(op.cx*.035), en=fin?Math.round(op.cx*.1):0;
+  var ll=op.av-op.cx-dc, d=pct(op.cx,op.av), roi=((ll/op.cx)*100).toFixed(0);
   var curl='https://venda-imoveis.caixa.gov.br/sistema/detalhe-imovel.asp?hdnOrigem=index&hdnimovel='+op.id;
   var wm=encodeURIComponent('Olá! Tenho interesse no imóvel "'+op.ti+'" (cód. '+op.id+').');
-  var tagsH='<span class="scb '+sCls(op.sc)+'">'+sLbl(op.sc)+'</span><span class="tag '+rCls(op.ri)+'">'+rLbl(op.ri)+'</span>';
-  for(var i=0;i<op.tg.length;i++){if(tH[op.tg[i]])tagsH+=tH[op.tg[i]];}
+  var tH2='<span class="tag '+sCls(op.sc)+'">'+sLbl(op.sc)+'</span><span class="tag '+rCls(op.ri)+'">'+rLbl(op.ri)+'</span>';
+  for(var i=0;i<op.tg.length;i++){if(TH[op.tg[i]])tH2+=TH[op.tg[i]];}
   var div=document.createElement('div');div.className='card';
   div.innerHTML=
-    '<div class="cimg"><div class="sk"></div><img id="ci-'+op.id+'" alt="'+op.ti+'" loading="lazy">'+
-    '<div class="bdesc">-'+d+'%</div>'+(op.en?'<div class="encb">⏰ Encerra: '+op.en+'</div>':'')+
-    '</div>'+
-    '<div class="ctgs">'+tagsH+'</div>'+
-    '<div class="cbdy">'+
-      '<div class="cttl2">'+op.ti+'</div>'+
-      '<div class="csub2">'+op.de+'</div>'+
-      '<div class="prow">'+
+    '<div class="card-img"><div class="shimmer"></div>'+
+    '<img alt="'+op.ti+'" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s">'+
+    '<div class="no-img"><svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-8.5-5.5l-3 3.86L7 14l-3 4h16l-5-6.5z"/></svg><span>Foto não disponível</span></div>'+
+    '<div class="badge-desc">-'+d+'%</div></div>'+
+    '<div class="card-tags">'+tH2+'</div>'+
+    '<div class="card-body">'+
+      '<div class="card-title">'+op.ti+'</div>'+
+      '<div class="card-sub">'+op.de+'</div>'+
+      '<div class="prices">'+
         '<div class="pr"><div class="lb">Arrematar por</div><div class="vl">'+brl(op.cx)+'</div></div>'+
-        '<div class="pr"><div class="lb">Avaliação Caixa</div><div class="vl st">'+brl(op.av)+'</div></div>'+
-        '<div class="pr gn"><div class="lb">Lucro líq. est.</div><div class="vl">+'+brl(ll)+'</div></div>'+
-        '<div class="pr go"><div class="lb">ROI est.</div><div class="vl">'+roi+'%</div></div>'+
+        '<div class="pr"><div class="lb">Avaliação Caixa</div><div class="vl cross">'+brl(op.av)+'</div></div>'+
+        '<div class="pr g"><div class="lb">Lucro líq. est.</div><div class="vl">+'+brl(ll)+'</div></div>'+
+        '<div class="pr o"><div class="lb">ROI est.</div><div class="vl">'+roi+'%</div></div>'+
       '</div>'+
-      '<div class="pbox">'+
-        '<div class="pbl"><div class="pblb">💰 Total para participar</div>'+
-        '<div class="pbbr">'+(fin?'Entrada 10%: '+brl(en2)+' + doc. '+brl(dc):'À vista · doc. est. '+brl(dc))+'</div></div>'+
-        '<div class="pbv">'+brl(total)+'</div>'+
-      '</div>'+
+      '<div class="part-box"><div class="part-l"><div class="part-lbl">💰 Total para participar</div>'+
+      '<div class="part-br">'+(fin?'Entrada 10%: '+brl(en)+' + doc. '+brl(dc):'À vista · doc. est. '+brl(dc))+'</div></div>'+
+      '<div class="part-v">'+brl(en+dc)+'</div></div>'+
     '</div>'+
-    '<div class="cft">'+
-      '<button class="bsm bdet" data-id="'+op.id+'">+ Detalhes</button>'+
-      '<a href="'+curl+'" target="_blank" class="bsm bver">'+eSvg+'Site Caixa</a>'+
-      '<a href="https://wa.me/'+WPP+'?text='+wm+'" target="_blank" class="bsm bint">'+wSvg+'Interesse</a>'+
+    '<div class="card-foot">'+
+      '<button class="btn btn-det" data-id="'+op.id+'">+ Detalhes</button>'+
+      '<a href="'+curl+'" target="_blank" class="btn btn-cai">'+eSVG+' Site Caixa</a>'+
+      '<a href="https://wa.me/'+WPP+'?text='+wm+'" target="_blank" class="btn btn-wpi">'+wSVG+' Interesse</a>'+
     '</div>';
-  loadImg(div.querySelector('#ci-'+op.id),op.id);
-  div.querySelector('.cbdy').addEventListener('click',function(){abrirModal(op.id);});
-  div.querySelector('.bdet').addEventListener('click',function(){abrirModal(op.id);});
+  var BASE_FOTOS='https://victorvcs.github.io/ofertas-leilao-caixa/fotos/';
+  var img=div.querySelector('.card-img img');
+  if(img){
+    img.onload=function(){
+      this.style.opacity='1';
+      var sh=this.parentNode.querySelector('.shimmer');
+      var no=this.parentNode.querySelector('.no-img');
+      if(sh)sh.style.display='none';
+      if(no)no.style.display='none';
+    };
+    img.onerror=function(){
+      this.style.display='none';
+      var sh=this.parentNode.querySelector('.shimmer');
+      if(sh)sh.style.display='none';
+    };
+    img.src=BASE_FOTOS+'F'+op.id+'21.jpg';
+  }
+  div.querySelector('.btn-det').onclick=function(e){e.stopPropagation();abrirModal(op.id);};
   return div;
 }
 
+// ── MODAL
 function abrirModal(id){
   var op=null;for(var i=0;i<D.length;i++){if(D[i].id===id){op=D[i];break;}}if(!op)return;
   var m=MC[op.ci];
   var fin=op.tg.indexOf('fin')>=0;
-  var lc=op.av-op.cx, dc=doc(op.ci,op.cx), en2=ent(op.cx,fin), ll=lc-dc;
-  var d=pct(op.cx,op.av), ROI=((ll/op.cx)*100).toFixed(0);
-  var total=en2+dc;
+  var dc=Math.round(op.cx*.035), en=fin?Math.round(op.cx*.1):0;
+  var ll=op.av-op.cx-dc, d=pct(op.cx,op.av), ROI=((ll/op.cx)*100).toFixed(0);
   var curl='https://venda-imoveis.caixa.gov.br/sistema/detalhe-imovel.asp?hdnOrigem=index&hdnimovel='+op.id;
   var wm=encodeURIComponent('Olá! Tenho interesse no imóvel "'+op.ti+'" (cód. '+op.id+').');
+  var cidade=op.ci==='niteroi'?'Niterói':'São Gonçalo';
 
-  // imagem
-  var mi=document.getElementById('mi');mi.src='';mi.style.display='block';
-  var old=document.querySelectorAll('.mhero .noph');for(var i=0;i<old.length;i++)old[i].remove();
-  loadImg(mi,op.id);
+  var mi=document.getElementById('m-img');
+  mi.style.display='block';
+  mi.onerror=function(){mi.style.display='none';};
+  mi.src='fotos/F'+op.id+'21.jpg';
 
-  // encerramento
-  var enc=document.getElementById('menc');
-  if(op.en){enc.classList.remove('hid');enc.textContent='⏰ Encerra: '+op.en;}else{enc.classList.add('hid');}
+  document.getElementById('m-h1').textContent=op.ti;
+  document.getElementById('m-sub').textContent=op.de;
+  document.getElementById('m-sc').innerHTML='<span class="tag '+sCls(op.sc)+'" style="font-size:13px;padding:6px 13px">'+sLbl(op.sc)+'</span>';
+  var tH2='<span class="tag '+rCls(op.ri)+'">'+rLbl(op.ri)+'</span>';
+  for(var i=0;i<op.tg.length;i++){if(TH[op.tg[i]])tH2+=TH[op.tg[i]];}
+  document.getElementById('m-tags').innerHTML=tH2;
+  document.getElementById('m-prs').innerHTML=
+    '<div class="mp"><div class="lb">Arrematar por</div><div class="vl">'+brl(op.cx)+'</div></div>'+
+    '<div class="mp"><div class="lb">Avaliação Caixa</div><div class="vl">'+brl(op.av)+'</div></div>'+
+    '<div class="mp g"><div class="lb">Lucro líquido est.</div><div class="vl">+'+brl(ll)+'</div></div>'+
+    '<div class="mp o"><div class="lb">ROI estimado</div><div class="vl">'+ROI+'%</div></div>';
+  document.getElementById('m-part').innerHTML=
+    '<div class="mpt">💰 Total para participar</div><div class="mpg">'+
+    (fin?'<div class="mpi"><div class="lb">Entrada (10%)</div><div class="vl">'+brl(en)+'</div></div>':'<div class="mpi"><div class="lb">Modalidade</div><div class="vl" style="font-size:12px">À vista</div></div>')+
+    '<div class="mpi"><div class="lb">Documentação est.</div><div class="vl">'+brl(dc)+'</div></div>'+
+    '<div class="mpi tot"><div class="lb">Total estimado</div><div class="vl">'+brl(en+dc)+'</div></div></div>'+
+    '<div class="mpn">📌 '+m.itb+' · '+(fin?'Financiamento Caixa disponível (SBPE)':'Exclusivamente à vista')+'</div>';
 
-  document.getElementById('mh1').textContent=op.ti;
-  document.getElementById('msb').textContent=op.de;
-  document.getElementById('msc').innerHTML='<div class="scb '+sCls(op.sc)+'" style="font-size:13px;padding:6px 12px">'+sLbl(op.sc)+'</div>';
-
-  var tgsH='<span class="tag '+rCls(op.ri)+'">'+rLbl(op.ri)+'</span>';
-  for(var i=0;i<op.tg.length;i++){if(tH[op.tg[i]])tgsH+=tH[op.tg[i]];}
-  document.getElementById('mtgs').innerHTML=tgsH;
-
-  document.getElementById('mpr').innerHTML=
-    '<div class="mpr"><div class="lb">Arrematar por</div><div class="vl">'+brl(op.cx)+'</div></div>'+
-    '<div class="mpr"><div class="lb">Avaliação Caixa</div><div class="vl">'+brl(op.av)+'</div></div>'+
-    '<div class="mpr gn"><div class="lb">Lucro líquido est.</div><div class="vl">+'+brl(ll)+'</div></div>'+
-    '<div class="mpr go"><div class="lb">ROI estimado</div><div class="vl">'+ROI+'%</div></div>';
-
-  document.getElementById('mpart').innerHTML=
-    '<div class="mptl">💰 Valor necessário para participar</div>'+
-    '<div class="mpgr">'+
-      (fin?'<div class="mpi"><div class="lb">Entrada (10%)</div><div class="vl">'+brl(en2)+'</div></div>':
-           '<div class="mpi"><div class="lb">Modalidade</div><div class="vl" style="font-size:12px">À vista</div></div>')+
-      '<div class="mpi"><div class="lb">Documentação est.</div><div class="vl">'+brl(dc)+'</div></div>'+
-      '<div class="mpi tot"><div class="lb">Total estimado</div><div class="vl">'+brl(total)+'</div></div>'+
-    '</div>'+
-    '<div class="mpnt">📌 '+m.itb+' · '+(fin?'Financiamento Caixa disponível (SBPE)':'Exclusivamente à vista')+'</div>';
-
-  // avf
-  var avfEl=document.getElementById('mavf');
+  var avfEl=document.getElementById('m-avf');
   if(fin){
-    var pv=op.cx*0.9,rate=SELIC/100/12,n=240;
+    var pv=op.cx*.9,rate=SELIC/100/12,n=240;
     var parc=pv*(rate*Math.pow(1+rate,n))/(Math.pow(1+rate,n)-1);
-    var totFin=en2+parc*n+dc, lFin=op.av-totFin, lAv=ll;
-    var mel=lAv>=lFin?'avista':'fin';
+    var lFin=op.av-(en+parc*n+dc),lAv=ll,mel=lAv>=lFin?'av':'fn';
     avfEl.style.display='';
-    avfEl.innerHTML=
-      '<div class="avfttl">⚖️ À Vista vs. Financiado</div>'+
-      '<div class="avfgr">'+
-        '<div class="avc av"><div class="avcttl">💵 À Vista '+(mel==='avista'?'✅':'')+'</div>'+
-          '<div class="avr"><span>Desembolso total</span><span class="av">'+brl(op.cx+dc)+'</span></div>'+
-          '<div class="avr"><span>Custo de juros</span><span class="av">R$ 0</span></div>'+
-          '<div class="avr"><span>Lucro líquido est.</span><span class="av">+'+brl(lAv)+'</span></div>'+
-          '<div class="avcvrd">ROI: '+((lAv/op.cx)*100).toFixed(0)+'%</div></div>'+
-        '<div class="avc fn"><div class="avcttl">🏦 Financiado '+(mel==='fin'?'✅':'')+'</div>'+
-          '<div class="avr"><span>Entrada + doc.</span><span class="av">'+brl(en2+dc)+'</span></div>'+
-          '<div class="avr"><span>Custo juros (240x)</span><span class="av">'+brl(parc*n-pv)+'</span></div>'+
-          '<div class="avr"><span>Parcela ref.</span><span class="av">'+brl(parc)+'/mês</span></div>'+
-          '<div class="avcvrd">Lucro est.: '+(lFin>0?'+':'')+brl(lFin)+'</div></div>'+
-      '</div>'+
-      '<div class="avfnt">Parcela com Selic '+SELIC+'% a.a. em 240 meses. Taxa real Caixa pode variar.</div>';
+    avfEl.innerHTML='<div class="avf-ttl">⚖️ À Vista vs. Financiado</div><div class="avf-gr">'+
+      '<div class="avc av"><div class="avc-ttl">💵 À Vista '+(mel==='av'?'✅':'')+'</div>'+
+      '<div class="avr"><span>Desembolso</span><span class="v">'+brl(op.cx+dc)+'</span></div>'+
+      '<div class="avr"><span>Juros</span><span class="v">R$ 0</span></div>'+
+      '<div class="avr"><span>Lucro est.</span><span class="v">+'+brl(lAv)+'</span></div>'+
+      '<div class="avc-vrd">ROI: '+((lAv/op.cx)*100).toFixed(0)+'%</div></div>'+
+      '<div class="avc fn"><div class="avc-ttl">🏦 Financiado '+(mel==='fn'?'✅':'')+'</div>'+
+      '<div class="avr"><span>Entrada+doc.</span><span class="v">'+brl(en+dc)+'</span></div>'+
+      '<div class="avr"><span>Custo juros 240x</span><span class="v">'+brl(parc*n-pv)+'</span></div>'+
+      '<div class="avr"><span>Parcela ref.</span><span class="v">'+brl(parc)+'/mês</span></div>'+
+      '<div class="avc-vrd">Lucro est.: '+(lFin>0?'+':'')+brl(lFin)+'</div></div></div>'+
+      '<div class="avf-nt">Selic '+SELIC+'% a.a., 240 meses. Taxa real Caixa pode variar.</div>';
   }else{avfEl.style.display='none';}
 
-  // aba mercado
-  document.getElementById('mst').innerHTML=
-    '<div class="stat"><div class="lb">Desconto s/ Avaliação Caixa</div><div class="vl" style="color:var(--gn)">-'+d+'%</div></div>'+
-    '<div class="stat go"><div class="lb">Valorização regional</div><div class="vl">'+m.val+'</div></div>'+
+  document.getElementById('m-st').innerHTML=
+    '<div class="stat"><div class="lb">Desconto s/ Avaliação</div><div class="vl" style="color:var(--gn)">-'+d+'%</div></div>'+
+    '<div class="stat o"><div class="lb">Valorização regional</div><div class="vl">'+m.val+'</div></div>'+
     '<div class="stat"><div class="lb">Demanda</div><div class="vl">'+m.dem+'</div></div>'+
     '<div class="stat"><div class="lb">Rent. locação est.</div><div class="vl">'+m.rent+'</div></div>'+
     '<div class="stat"><div class="lb">m² venda</div><div class="vl">'+m.m2v+'</div></div>'+
     '<div class="stat"><div class="lb">Aluguel m²</div><div class="vl">'+m.m2a+'</div></div>';
-  document.getElementById('mtx').textContent=op.tx;
+  document.getElementById('m-tx').textContent=op.tx;
 
-  // aba portais
-  var m2d=M2[op.br]||{zap:3500,qa:3000,src:"DataZAP estimativa"};
-  var area=op.ar||55;
-  var vtzap=Math.round(m2d.zap*area), vtqa=Math.round(m2d.qa*area);
-  var vmed=Math.round((m2d.zap+m2d.qa)/2), vtmed=Math.round(vmed*area);
-  var vtpess=Math.round(vtmed*0.80);
-  var lp=vtpess-op.cx-dc, lr=vtmed-op.cx-dc;
-  var rp=((lp/op.cx)*100).toFixed(0), rr=((lr/op.cx)*100).toFixed(0);
-  var cidade=op.ci==='niteroi'?'Niterói':'São Gonçalo';
-  var bE=encodeURIComponent(op.br+', '+cidade+', RJ');
-
-  function prow(l,v,red){
-    return '<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:12px">'+
-      '<span style="color:#5a6a8a">'+l+'</span><span style="font-weight:700;color:'+(red?'#dc2626':'#1B2E5E')+'">'+v+'</span></div>';
-  }
-  function pcard(nm,m2,vt,az,bg,bd){
-    return '<div style="background:'+bg+';border:1.5px solid '+bd+';border-radius:12px;padding:13px">'+
-      '<div style="font-size:9px;font-weight:800;text-transform:uppercase;color:'+az+';opacity:.7;margin-bottom:5px">'+nm+'</div>'+
-      '<div style="font-size:22px;font-weight:900;color:'+az+';line-height:1;margin-bottom:6px">'+brl(m2)+'/m²</div>'+
-      '<div style="height:1px;background:'+bd+';margin-bottom:6px"></div>'+
-      '<div style="font-size:10px;color:#5a6a8a;margin-bottom:2px">'+area+'m² estimado</div>'+
-      '<div style="font-size:16px;font-weight:900;color:'+az+'">'+brl(vt)+'</div>'+
-    '</div>';
-  }
-
-  document.getElementById('mportais').innerHTML=
-    '<div style="font-size:11px;color:#5a6a8a;line-height:1.6;padding:9px 12px;background:rgba(27,46,94,.04);border-left:3px solid #F5A800;border-radius:0 8px 8px 0;margin-bottom:16px">'+
-      'Estimativa para <strong style="color:#1B2E5E">'+op.br+'</strong> · <strong style="color:#1B2E5E">'+area+'m²</strong> · Mai/2025. Pessimista = −20% da média (usado, sem reforma). Informativo.'+
+  // portais
+  var m2=M2[op.br]||{zap:3500,qa:3000,src:'DataZAP'};
+  var ar=op.ar||55;
+  var vtzap=Math.round(m2.zap*ar),vtqa=Math.round(m2.qa*ar);
+  var vmed=Math.round((m2.zap+m2.qa)/2),vtmed=Math.round(vmed*ar),vtpess=Math.round(vtmed*.8);
+  var lp=vtpess-op.cx-dc,lr=vtmed-op.cx-dc;
+  function crow(l,v,r){return '<div class="cen-row"><span>'+l+'</span><span class="cv'+(r?' r':'')+'">'+v+'</span></div>';}
+  document.getElementById('m-portais').innerHTML=
+    '<div class="port-pc">Estimativa para <strong>'+op.br+'</strong> · <strong>'+ar+'m²</strong> · Mai/2025. Pessimista = −20% da média. Informativo.</div>'+
+    '<div class="port-ttl">📊 Valor estimado por portal</div>'+
+    '<div class="port-cards">'+
+      '<div class="port-card"><div class="pnm">ZAP Imóveis</div><div class="pm2">'+brl(m2.zap)+'/m²</div><div class="pdiv"></div><div class="parea">'+ar+'m² estimado</div><div class="ptot">'+brl(vtzap)+'</div></div>'+
+      '<div class="port-card"><div class="pnm">QuintoAndar</div><div class="pm2">'+brl(m2.qa)+'/m²</div><div class="pdiv"></div><div class="parea">'+ar+'m² estimado</div><div class="ptot">'+brl(vtqa)+'</div></div>'+
+      '<div class="port-card med"><div class="pnm">Média portais</div><div class="pm2">'+brl(vmed)+'/m²</div><div class="pdiv"></div><div class="parea">'+ar+'m² estimado</div><div class="ptot">'+brl(vtmed)+'</div></div>'+
     '</div>'+
-    '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#1B2E5E;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #dce4f2">📊 Valor estimado por portal</div>'+
-    '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px">'+
-      pcard('ZAP Imóveis',m2d.zap,vtzap,'#1B2E5E','#F0F4FB','#dce4f2')+
-      pcard('QuintoAndar',m2d.qa,vtqa,'#1B2E5E','#F0F4FB','#dce4f2')+
-      pcard('Média portais',vmed,vtmed,'#1E4DB7','rgba(30,77,183,.07)','rgba(30,77,183,.25)')+
+    '<div class="port-ttl">💡 Cenários de Revenda</div>'+
+    '<div class="cen-gr">'+
+      '<div class="cen pess"><div class="cen-ttl">🟡 Pessimista <span style="font-size:10px;font-weight:500;opacity:.7">−20%</span></div>'+
+      crow('Revenda est.',brl(vtpess),false)+crow('(−) Arrematar',brl(op.cx),true)+crow('(−) Documentação',brl(dc),true)+
+      '<div class="cen-res"><div class="rlbl">'+(lp>=0?'Lucro est.':'Prejuízo')+'</div><div class="rval">'+(lp>=0?'+':'')+brl(lp)+'</div><div class="rroi">ROI: '+((lp/op.cx)*100).toFixed(0)+'%</div></div></div>'+
+      '<div class="cen real"><div class="cen-ttl">🟢 Realista <span style="font-size:10px;font-weight:500;opacity:.7">média</span></div>'+
+      crow('Revenda est.',brl(vtmed),false)+crow('(−) Arrematar',brl(op.cx),true)+crow('(−) Documentação',brl(dc),true)+
+      '<div class="cen-res"><div class="rlbl">'+(lr>=0?'Lucro est.':'Prejuízo')+'</div><div class="rval">'+(lr>=0?'+':'')+brl(lr)+'</div><div class="rroi">ROI: '+((lr/op.cx)*100).toFixed(0)+'%</div></div></div>'+
     '</div>'+
-    '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#1B2E5E;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #dce4f2">💡 Cenários de Revenda</div>'+
-    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">'+
-      '<div style="background:#fffbeb;border:1.5px solid #fde68a;border-radius:12px;padding:14px">'+
-        '<div style="font-size:12px;font-weight:800;color:#92400e;margin-bottom:10px">🟡 Pessimista <span style="font-size:10px;font-weight:500;opacity:.7">−20%</span></div>'+
-        prow('Revenda est.',brl(vtpess),false)+prow('(−) Arrematar',brl(op.cx),true)+prow('(−) Documentação',brl(dc),true)+
-        '<div style="margin-top:10px;padding-top:8px;border-top:2px solid rgba(146,64,14,.12)">'+
-          '<div style="font-size:9px;font-weight:800;text-transform:uppercase;color:#92400e;margin-bottom:3px">'+(lp>=0?'Lucro est.':'Prejuízo est.')+'</div>'+
-          '<div style="font-size:24px;font-weight:900;color:'+(lp>=0?'#92400e':'#dc2626')+';line-height:1">'+(lp>=0?'+':'')+brl(lp)+'</div>'+
-          '<div style="font-size:11px;font-weight:700;color:#92400e;margin-top:3px">ROI: '+rp+'%</div>'+
-        '</div>'+
-      '</div>'+
-      '<div style="background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:12px;padding:14px">'+
-        '<div style="font-size:12px;font-weight:800;color:#15803d;margin-bottom:10px">🟢 Realista <span style="font-size:10px;font-weight:500;opacity:.7">média</span></div>'+
-        prow('Revenda est.',brl(vtmed),false)+prow('(−) Arrematar',brl(op.cx),true)+prow('(−) Documentação',brl(dc),true)+
-        '<div style="margin-top:10px;padding-top:8px;border-top:2px solid rgba(21,128,61,.12)">'+
-          '<div style="font-size:9px;font-weight:800;text-transform:uppercase;color:#15803d;margin-bottom:3px">'+(lr>=0?'Lucro est.':'Prejuízo est.')+'</div>'+
-          '<div style="font-size:24px;font-weight:900;color:'+(lr>=0?'#15803d':'#dc2626')+';line-height:1">'+(lr>=0?'+':'')+brl(lr)+'</div>'+
-          '<div style="font-size:11px;font-weight:700;color:#15803d;margin-top:3px">ROI: '+rr+'%</div>'+
-        '</div>'+
-      '</div>'+
-    '</div>'+
-    '<div style="font-size:10px;color:#5a6a8a;font-style:italic;line-height:1.55;margin-bottom:14px">⚠️ Preços de anúncio — fechamento costuma ser 5–15% menor. Fonte: '+m2d.src+'</div>'+
-    '<div style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#1B2E5E;margin-bottom:8px">🔍 Pesquisar nos portais</div>'+
-    '<div style="display:flex;gap:8px;flex-wrap:wrap">'+
-      '<a href="https://www.zapimoveis.com.br/venda/imoveis/'+bE+'/" target="_blank" style="font-size:11px;font-weight:700;padding:7px 14px;border-radius:50px;background:#F0F4FB;border:1.5px solid #dce4f2;color:#1E4DB7;text-decoration:none">ZAP Imóveis</a>'+
-      '<a href="https://www.quintoandar.com.br/comprar/imovel/'+encodeURIComponent(op.br.toLowerCase()+'-'+cidade.toLowerCase()+'-rj-brasil')+'/apartamento" target="_blank" style="font-size:11px;font-weight:700;padding:7px 14px;border-radius:50px;background:#F0F4FB;border:1.5px solid #dce4f2;color:#1E4DB7;text-decoration:none">QuintoAndar</a>'+
-      '<a href="https://www.olx.com.br/imoveis/venda/apartamentos/estado-rj" target="_blank" style="font-size:11px;font-weight:700;padding:7px 14px;border-radius:50px;background:#F0F4FB;border:1.5px solid #dce4f2;color:#1E4DB7;text-decoration:none">OLX</a>'+
-      '<a href="https://loft.com.br/venda/apartamentos/rj/'+encodeURIComponent(cidade.toLowerCase())+'" target="_blank" style="font-size:11px;font-weight:700;padding:7px 14px;border-radius:50px;background:#F0F4FB;border:1.5px solid #dce4f2;color:#1E4DB7;text-decoration:none">Loft</a>'+
+    '<div class="port-nt">⚠️ Preços de anúncio — fechamento costuma ser 5–15% menor. Fonte: '+m2.src+'</div>'+
+    '<div class="port-ttl">🔍 Pesquisar nos portais</div>'+
+    '<div class="port-links">'+
+      '<a class="port-link" href="https://www.zapimoveis.com.br/venda/imoveis/'+encodeURIComponent(op.br+', '+cidade+', RJ')+'/" target="_blank">ZAP Imóveis</a>'+
+      '<a class="port-link" href="https://www.quintoandar.com.br/comprar/imovel/'+encodeURIComponent(op.br.toLowerCase()+'-'+cidade.toLowerCase()+'-rj-brasil')+'/apartamento" target="_blank">QuintoAndar</a>'+
+      '<a class="port-link" href="https://www.olx.com.br/imoveis/venda/apartamentos/estado-rj" target="_blank">OLX</a>'+
+      '<a class="port-link" href="https://loft.com.br/venda/apartamentos/rj/'+encodeURIComponent(cidade.toLowerCase())+'" target="_blank">Loft</a>'+
     '</div>';
 
-  // aba localidade
-  document.getElementById('mmap').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(op.br+', '+cidade+', RJ');
+  document.getElementById('m-map').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(op.br+', '+cidade+', RJ');
   var ch='';for(var i=0;i<m.chips.length;i++)ch+='<div class="chip">'+m.chips[i]+'</div>';
-  document.getElementById('mch').innerHTML=ch;
-  document.getElementById('mlo').textContent=m.inf;
+  document.getElementById('m-chips').innerHTML=ch;
+  document.getElementById('m-loc').textContent=m.inf;
+  var pjh='';for(var i=0;i<m.pj.length;i++){pjh+='<div class="pj"><div class="pj-ic"><svg viewBox="0 0 24 24"><path d="M4 16c0 .88.39 1.67 1 2.22V20a1 1 0 001 1h1a1 1 0 001-1v-1h8v1a1 1 0 001 1h1a1 1 0 001-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm9 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM4 11V9h16v2H4z"/></svg></div><div><div class="pj-t">'+m.pj[i].t+'</div><div class="pj-d">'+m.pj[i].d+' <a href="'+m.pj[i].l+'" target="_blank">→ fonte</a></div></div></div>';}
+  document.getElementById('m-pj').innerHTML=pjh;
 
-  // aba projetos
-  var ph='';
-  for(var i=0;i<m.pj.length;i++){
-    ph+='<div class="pj"><div class="pjic"><svg viewBox="0 0 24 24"><path d="M4 16c0 .88.39 1.67 1 2.22V20a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h8v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm9 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM4 11V9h16v2H4z"/></svg></div>'+
-      '<div><div class="pjt">'+m.pj[i].t+'</div><div class="pjd">'+m.pj[i].d+' <a href="'+m.pj[i].l+'" target="_blank">→ fonte</a></div></div></div>';
-  }
-  document.getElementById('mpj').innerHTML=ph;
+  document.getElementById('m-foot').innerHTML=
+    '<a href="'+curl+'" target="_blank" class="mfb mfv">'+eSVG+' Site Caixa</a>'+
+    '<a href="https://wa.me/'+WPP+'?text='+wm+'" target="_blank" class="mfb mfi">'+wSVG+' Tenho Interesse</a>';
 
-  document.getElementById('mft').innerHTML=
-    '<a href="'+curl+'" target="_blank" class="mfb mfv">'+eSvg+'Site Caixa</a>'+
-    '<a href="https://wa.me/'+WPP+'?text='+wm+'" target="_blank" class="mfb mfi">'+wSvg+'Tenho Interesse</a>';
+  // ativa tab 0
+  setTab(0);
 
-  abaModal(0);
-  document.getElementById('ov').classList.remove('hid');
+  // abre modal
+  var mw=document.getElementById('modal-wrap');
+  mw.style.display='block';
+  mw.scrollTop=0;
   document.body.style.overflow='hidden';
 }
 
-function fecharModal(){document.getElementById('ov').classList.add('hid');document.body.style.overflow='';}
+function fecharModal(){
+  document.getElementById('modal-wrap').style.display='none';
+  document.body.style.overflow='';
+}
 
-function abaModal(idx){
-  var tabs=document.querySelectorAll('.mtab'),panes=document.querySelectorAll('.tpane');
+function setTab(idx){
+  var tabs=document.querySelectorAll('.m-tab');
+  var panes=document.querySelectorAll('.tpane');
   for(var i=0;i<tabs.length;i++){tabs[i].classList.remove('on');panes[i].classList.remove('on');}
   if(tabs[idx])tabs[idx].classList.add('on');
   if(panes[idx])panes[idx].classList.add('on');
 }
 
-// event listeners
-document.getElementById('mcls').addEventListener('click',fecharModal);
-document.getElementById('ov').addEventListener('click',function(e){if(e.target===this)fecharModal();});
-document.getElementById('t0').addEventListener('click',function(){abaModal(0);});
-document.getElementById('t1').addEventListener('click',function(){abaModal(1);});
-document.getElementById('t2').addEventListener('click',function(){abaModal(2);});
-document.getElementById('t3').addEventListener('click',function(){abaModal(3);});
-document.getElementById('sp0').addEventListener('click',function(){setSort('score');});
-document.getElementById('sp1').addEventListener('click',function(){setSort('desconto');});
-document.getElementById('sp2').addEventListener('click',function(){setSort('preco');});
-document.getElementById('sp3').addEventListener('click',function(){setSort('lucro');});
+// ── BINDS
+document.getElementById('m-cls').onclick=fecharModal;
+document.querySelector('.m-tabs').onclick=function(e){
+  var t=e.target.closest('[data-tab]');
+  if(t)setTab(parseInt(t.getAttribute('data-tab')));
+};
+document.getElementById('s0').onclick=function(){sort='score';   document.querySelectorAll('.sp').forEach(function(s){s.classList.remove('on');}); this.classList.add('on');renderCards();};
+document.getElementById('s1').onclick=function(){sort='desconto';document.querySelectorAll('.sp').forEach(function(s){s.classList.remove('on');}); this.classList.add('on');renderCards();};
+document.getElementById('s2').onclick=function(){sort='preco';   document.querySelectorAll('.sp').forEach(function(s){s.classList.remove('on');}); this.classList.add('on');renderCards();};
+document.getElementById('s3').onclick=function(){sort='lucro';   document.querySelectorAll('.sp').forEach(function(s){s.classList.remove('on');}); this.classList.add('on');renderCards();};
 document.addEventListener('keydown',function(e){if(e.key==='Escape')fecharModal();});
 
-// INIT — renderiza imediatamente
-renderAbas();
+// ── INIT
+renderTabs();
 renderCards();
 </script>
 </body>
