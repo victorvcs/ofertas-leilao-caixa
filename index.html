@@ -30,6 +30,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .btn-wpp{display:flex;align-items:center;gap:7px;background:var(--wp);color:#fff;font-size:13px;font-weight:700;padding:9px 18px;border-radius:50px;text-decoration:none}
 .btn-wpp svg{width:17px;height:17px}
+.creci-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--az);padding:5px 12px;background:rgba(245,168,0,.12);border:1px solid rgba(245,168,0,.4);border-radius:8px;line-height:1.15;white-space:nowrap}
+.creci-tag svg{width:14px;height:14px;fill:var(--od);flex-shrink:0}
+.creci-short{display:none}
+@media(max-width:760px){.creci-full{display:none}.creci-short{display:inline}}
+@media(max-width:540px){.creci-tag{padding:4px 9px;font-size:10px}}
 
 /* ── FILTROS ── */
 .bar1{background:var(--wh);border-bottom:1px solid var(--bd);overflow-x:auto}
@@ -55,6 +60,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .sep-l{flex:1;height:1px;background:var(--bd)}
 .sep-t{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--az);white-space:nowrap}
 .sec2{margin-top:48px}
+.sec-block{margin-top:44px}.sec-block:first-child{margin-top:6px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);gap:16px}.pill-live{display:none}}
 @media(max-width:540px){.grid{grid-template-columns:1fr;gap:14px}.hdr-in{padding:0 14px}.bar2{padding:8px 14px}.main{padding:16px 14px 60px}}
@@ -229,8 +235,13 @@ footer{background:var(--az);color:rgba(255,255,255,.5);padding:28px 24px;text-al
       <div class="logo-mp"><span class="m">M</span><span class="p">P</span></div>
       <div class="logo-tx"><div class="logo-nm">MEDINA PAES</div><div class="logo-sb">Imóveis</div></div>
     </div>
+    <div class="creci-tag">
+      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+      <span class="creci-full">Imobiliária Credenciada CAIXA - CRECI:9165</span>
+      <span class="creci-short">CRECI:9165</span>
+    </div>
     <div style="display:flex;align-items:center;gap:10px">
-      <div class="pill-live"><span class="dot"></span><span>Atualizado <strong>30/05</strong> · <strong>15</strong> leilões</span></div>
+      <div class="pill-live"><span class="dot"></span><span>Atualizado <strong>18/06</strong> · <strong id="pill-n">29</strong> leilões</span></div>
       <a href="https://wa.me/5521986517152" target="_blank" class="btn-wpp">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp
@@ -257,15 +268,14 @@ footer{background:var(--az);color:rgba(255,255,255,.5);padding:28px 24px;text-al
 
 <!-- grid -->
 <main class="main">
-  <div id="sn"><div class="sep"><div class="sep-l"></div><div class="sep-t">📍 Niterói — RJ</div><div class="sep-l"></div></div><div class="grid" id="gn"></div></div>
-  <div id="sg" class="sec2"><div class="sep"><div class="sep-l"></div><div class="sep-t">📍 São Gonçalo — RJ</div><div class="sep-l"></div></div><div class="grid" id="gg"></div></div>
+  <div id="sections"></div>
 </main>
 
 <footer>
   <div class="fl">M<span>P</span> MEDINA PAES</div>
   <div class="fs">Imóveis</div>
   <p style="font-size:12px;color:rgba(255,255,255,.4)">Especialistas em imóveis de leilão — Niterói e São Gonçalo</p>
-  <p class="fv">⚠️ Valores de ROI, custos e comparativos têm caráter informativo. Dados extraídos do site da Caixa em 26/05/2025. Confirme todas as condições antes de qualquer decisão.</p>
+  <p class="fv">⚠️ Valores de ROI, custos e comparativos têm caráter informativo. Dados extraídos do site da Caixa em 17/06/2026. Confirme todas as condições antes de qualquer decisão.</p>
 </footer>
 
 <!-- modal tela cheia -->
@@ -299,23 +309,37 @@ var pct=function(a,b){return(((b-a)/b)*100).toFixed(0)};
 
 // ── DADOS ──────────────────────────────────────────────────────────────────
 var D=[
-  {id:'8444419293320',ti:'Apartamento · Centro',        de:'1 quarto · 1 vaga · 120m² · Rua Dr. Celestino, 102',           br:'Centro',           ci:'niteroi',    av:400000,    cx:254925.72,ar:120,  ri:'baixo',tg:['fin','online','fgts'],tx:'Descrição Caixa: Quarto, 1 Vaga na Garagem. Pagamento: recursos próprios, FGTS e financiamento SBPE.'},
+  {id:'8444419293320',tp:'apartamento',ti:'Apartamento · Centro',        de:'1 quarto · 1 vaga · 120m² · Rua Dr. Celestino, 102',           br:'Centro',           ci:'niteroi',    av:400000,    cx:254925.72,ar:120,  ri:'baixo',tg:['fin','online','fgts'],tx:'Descrição Caixa: Quarto, 1 Vaga na Garagem. Pagamento: recursos próprios, FGTS e financiamento SBPE.'},
 
-  {id:'0000010207829',ti:'Sala Comercial · Centro',     de:'139m² · Rua José Clemente, 100 Sl 403',                         br:'Centro',           ci:'niteroi',    av:491000,    cx:239843.40,ar:139,  ri:'medio', tg:['fin','online'],      tx:'Descrição Caixa: Tipo Sala. Pagamento: recursos próprios e financiamento SBPE.'},
-  {id:'1555518585837',ti:'Apartamento 3 Quartos · Icaraí',de:'3 quartos · 1 vaga · 103m² · Rua Dr. Paulo Cesar, 179',      br:'Icaraí',           ci:'niteroi',    av:995000,    cx:634127.73,ar:103,  ri:'baixo', tg:['fin','online'],      tx:'Descrição Caixa: 3 Quartos, 1 Vaga, Área de Serviço, 2 Wc, Sala, Cozinha. Gravame/penhora averbada.'},
-  {id:'0000010171274',ti:'Loja · Icaraí',               de:'33,68m² · Rua Prof. Miguel Couto, 479 Lj 201',                  br:'Icaraí',           ci:'niteroi',    av:300000,    cx:196185.12,ar:33,   ri:'alto',  tg:[],                   tx:'Descrição Caixa: Tipo Loja. Pagamento: exclusivamente à vista.'},
-  {id:'1444420915292',ti:'Casa · Itaipu',               de:'450m² · terreno 450m² · Av. Prof. Romanda Gonçalves, 2681',     br:'Itaipu',           ci:'niteroi',    av:880000,    cx:560836.58,ar:450,  ri:'medio', tg:['fin','online'],      tx:'Descrição Caixa: sem descrição. Área não averbada — regularização por conta do adquirente.'},
-  {id:'1444419445911',ti:'Casa 3 Quartos · Itaipu',     de:'3 quartos · 211m² · terreno 360m² · Rua Prof. Angeolina, 55',  br:'Itaipu',           ci:'niteroi',    av:751004.94, cx:442729.22,ar:211,  ri:'baixo', tg:['fin','online','fgts'],tx:'Descrição Caixa: 3 Quartos, Área de Serviço, 2 Wc, 2 Salas, Lavabo, Cozinha.'},
-  {id:'8444409347125',ti:'Apartamento 2 Quartos · Barradas',de:'2 quartos · 47m² · Rua Benjamin Constant, 442 Apto 505',   br:'Largo do Barradas',ci:'niteroi',    av:180000,    cx:108389.57,ar:47,   ri:'baixo', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, Área de Serviço, Wc, Sala, Cozinha.'},
-  {id:'1555527013638',ti:'Apartamento 2 Quartos · Maçeió',de:'2 quartos · 1 vaga · 57m² · Est. Pacheco de Carvalho, 1251', br:'Maçeió',           ci:'niteroi',    av:427210.43, cx:265460.63,ar:57,   ri:'baixo', tg:['fin','online','fgts'],tx:'Descrição Caixa: 2 Quartos, 1 Vaga, Área de Serviço, 2 Wc, Sala, Cozinha.'},
-  {id:'1444403164179',ti:'Vaga de Garagem · Santa Rosa', de:'1 vaga · 0,01m² · Rua Noronha Torrezão, 335 Apto 1401',       br:'Santa Rosa',       ci:'niteroi',    av:285000,    cx:181634.58,ar:null, ri:'medio', tg:['fin','online','fgts'],tx:'⚠️ Descrição Caixa: 1 Vaga na Garagem. Área averbada: 0,01m².'},
-  {id:'8444409733890',ti:'Apartamento 2 Quartos · Santa Rosa',de:'2 quartos · 52m² · Rua Noronha Torrezão, 407 Apto 604',  br:'Santa Rosa',       ci:'niteroi',    av:190000,    cx:119590.43,ar:52,   ri:'medio', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, Wc, Sala, Cozinha.'},
+  {id:'0000010207829',tp:'sala',ti:'Sala Comercial · Centro',     de:'139m² · Rua José Clemente, 100 Sl 403',                         br:'Centro',           ci:'niteroi',    av:491000,    cx:239843.40,ar:139,  ri:'medio', tg:['fin','online'],      tx:'Descrição Caixa: Tipo Sala. Pagamento: recursos próprios e financiamento SBPE.'},
+  {id:'1555518585837',tp:'apartamento',ti:'Apartamento 3 Quartos · Icaraí',de:'3 quartos · 1 vaga · 103m² · Rua Dr. Paulo Cesar, 179',      br:'Icaraí',           ci:'niteroi',    av:995000,    cx:634127.73,ar:103,  ri:'baixo', tg:['fin','online'],      tx:'Descrição Caixa: 3 Quartos, 1 Vaga, Área de Serviço, 2 Wc, Sala, Cozinha. Gravame/penhora averbada.'},
+  {id:'0000010171274',tp:'loja',ti:'Loja · Icaraí',               de:'33,68m² · Rua Prof. Miguel Couto, 479 Lj 201',                  br:'Icaraí',           ci:'niteroi',    av:300000,    cx:175165.29,ar:33,   ri:'alto',  tg:[],                   tx:'Descrição Caixa: Tipo Loja. Pagamento: exclusivamente à vista.'},
+  {id:'1444420915292',tp:'casa',ti:'Casa · Itaipu',               de:'450m² · terreno 450m² · Av. Prof. Romanda Gonçalves, 2681',     br:'Itaipu',           ci:'niteroi',    av:880000,    cx:560836.58,ar:450,  ri:'medio', tg:['fin','online'],      tx:'Descrição Caixa: sem descrição. Área não averbada — regularização por conta do adquirente.'},
+  {id:'8444409347125',tp:'apartamento',ti:'Apartamento 2 Quartos · Barradas',de:'2 quartos · 47m² · Rua Benjamin Constant, 442 Apto 505',   br:'Largo do Barradas',ci:'niteroi',    av:180000,    cx:105610.35,ar:47,   ri:'baixo', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, Área de Serviço, Wc, Sala, Cozinha.'},
+  {id:'1555527013638',tp:'apartamento',ti:'Apartamento 2 Quartos · Maçeió',de:'2 quartos · 1 vaga · 57m² · Est. Pacheco de Carvalho, 1251', br:'Maçeió',           ci:'niteroi',    av:427210.43, cx:258653.95,ar:57,   ri:'baixo', tg:['fin','online','fgts'],tx:'Descrição Caixa: 2 Quartos, 1 Vaga, Área de Serviço, 2 Wc, Sala, Cozinha.'},
+  {id:'1444403164179',tp:'vaga',ti:'Vaga de Garagem · Santa Rosa', de:'1 vaga · 0,01m² · Rua Noronha Torrezão, 335 Apto 1401',       br:'Santa Rosa',       ci:'niteroi',    av:285000,    cx:181634.58,ar:null, ri:'medio', tg:['fin','online','fgts'],tx:'⚠️ Descrição Caixa: 1 Vaga na Garagem. Área averbada: 0,01m².'},
+  {id:'8444409733890',tp:'apartamento',ti:'Apartamento 2 Quartos · Santa Rosa',de:'2 quartos · 52m² · Rua Noronha Torrezão, 407 Apto 604',  br:'Santa Rosa',       ci:'niteroi',    av:190000,    cx:119590.43,ar:52,   ri:'medio', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, Wc, Sala, Cozinha.'},
 
-  {id:'8444422392856',ti:'Apartamento 2 Quartos · Marambaia',de:'2 quartos · 1 vaga · 63m² · Rua Miniapolis, 182 Apto 303',br:'Marambaia',        ci:'saogoncalo', av:132000,    cx:58350.13, ar:63,   ri:'baixo', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, 1 Vaga, Wc, Sala, Cozinha.'},
-  {id:'8444422862364',ti:'Apartamento 2 Quartos · Marambaia',de:'2 quartos · 1 vaga · 59m² · Rua Miniapolis, 182 Apto 301',br:'Marambaia',        ci:'saogoncalo', av:146411.87, cx:14641.18, ar:59,   ri:'alto',  tg:['fgts'],             tx:'⚠️ Descrição Caixa: 2 Quartos, 1 Vaga, Área de Serviço, Wc, Sala, Cozinha. Gravame/penhora averbada.'},
-  {id:'8444425826091',ti:'Apartamento 2 Quartos · Marambaia',de:'2 quartos · 1 vaga · 64m² · Rua Miniapolis, 182 Un 06',  br:'Marambaia',        ci:'saogoncalo', av:106000,    cx:43926.07, ar:64,   ri:'medio', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, 1 Vaga, Wc, Sala, Cozinha.'},
-  {id:'8444424859557',ti:'Apartamento 2 Quartos · Mutondo',  de:'2 quartos · 1 vaga · 48m² · Rua Dr. Alfredo Backer, 601',br:'Mutondo',          ci:'saogoncalo', av:132000,    cx:76464.05, ar:48,   ri:'alto',  tg:[],                   tx:'⚠️ Descrição Caixa: 2 Quartos, 1 Vaga, Área de Serviço, Wc, Sala. Gravame/penhora. À vista.'},
-  {id:'1555530064248',ti:'Apartamento 2 Quartos · Nova Cidade',de:'2 quartos · 1 vaga · 43m² · Rua Vicente de Lima Cleto, 451',br:'Nova Cidade',  ci:'saogoncalo', av:175000,    cx:77554.23, ar:43,   ri:'medio', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, 1 Vaga, Wc, Sala, Cozinha.'}
+  {id:'8444422392856',tp:'apartamento',ti:'Apartamento 2 Quartos · Marambaia',de:'2 quartos · 1 vaga · 63m² · Rua Miniapolis, 182 Apto 303',br:'Marambaia',        ci:'saogoncalo', av:132000,    cx:54703.25, ar:63,   ri:'baixo', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, 1 Vaga, Wc, Sala, Cozinha.'},
+  {id:'8444422862364',tp:'apartamento',ti:'Apartamento 2 Quartos · Marambaia',de:'2 quartos · 1 vaga · 59m² · Rua Miniapolis, 182 Apto 301',br:'Marambaia',        ci:'saogoncalo', av:146411.87, cx:14641.18, ar:59,   ri:'alto',  tg:['fgts'],             tx:'⚠️ Descrição Caixa: 2 Quartos, 1 Vaga, Área de Serviço, Wc, Sala, Cozinha. Gravame/penhora averbada.'},
+  {id:'8444425826091',tp:'apartamento',ti:'Apartamento 2 Quartos · Marambaia',de:'2 quartos · 1 vaga · 64m² · Rua Miniapolis, 182 Un 06',  br:'Marambaia',        ci:'saogoncalo', av:106000,    cx:41180.69, ar:64,   ri:'medio', tg:['fgts'],             tx:'Descrição Caixa: 2 Quartos, 1 Vaga, Wc, Sala, Cozinha.'},
+  {id:'8444424859557',tp:'apartamento',ti:'Apartamento 2 Quartos · Mutondo',  de:'2 quartos · 1 vaga · 48m² · Rua Dr. Alfredo Backer, 601',br:'Mutondo',          ci:'saogoncalo', av:132000,    cx:76464.05, ar:48,   ri:'alto',  tg:[],                   tx:'⚠️ Descrição Caixa: 2 Quartos, 1 Vaga, Área de Serviço, Wc, Sala. Gravame/penhora. À vista.'},
+  {id:'1444412529826',tp:'sala',ti:'Sala Comercial · Barra da Tijuca',de:'50m² · AVENIDA AFONSO ARINOS DE MELO FRANCO, N. 222, Apto 307, BL 02',br:'Barra da Tijuca',ci:'rio',av:455000,cx:222258.14,ar:50,ri:'medio',tg:['fin','online'],tx:'Descrição Caixa: Sala, 0.00 de área total, 50.00 de área privativa, 0.01 de área do terreno, WC, 1 sala(s), cozinha, 1 vaga(s) de garagem. Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Direta Online.'},
+  {id:'1444407181205',tp:'loja',ti:'Loja · Barra da Tijuca',de:'48m² · AVENIDA DAS AMERICAS, N. 700, LJ 303-A, BL 08',br:'Barra da Tijuca',ci:'rio',av:450000,cx:197060.95,ar:48,ri:'medio',tg:['fin','online'],tx:'Descrição Caixa: Loja, 0.00 de área total, 48.00 de área privativa, 0.00 de área do terreno, 1 sala(s), 1 lavabo(s). Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Online.'},
+  {id:'1444420842902',tp:'loja',ti:'Loja · Barra da Tijuca',de:'29m² · AVENIDA DAS AMERICAS, N. 700, LJ 202-K, BL 08',br:'Barra da Tijuca',ci:'rio',av:300000,cx:176854.71,ar:29,ri:'medio',tg:['fin','online'],tx:'Descrição Caixa: Loja, 29.00 de área total, 29.00 de área privativa, 0.00 de área do terreno, 1 sala(s). Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Online.'},
+  {id:'1555533806350',tp:'comercial',ti:'Ponto Comercial · Barra da Tijuca',de:'48m² · AVENIDA DAS AMERICAS, N. 2300, SL 124, BL B',br:'Barra da Tijuca',ci:'rio',av:450000,cx:286791.44,ar:48,ri:'medio',tg:['fin','online'],tx:'Descrição Caixa: Comercial, 48.00 de área total, 48.00 de área privativa, 0.00 de área do terreno, WC, 1 sala(s), 1 vaga(s) de garagem. Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Online.'},
+  {id:'0000010208057',tp:'loja',ti:'Loja · Barra da Tijuca',de:'117m² · RUA JOSE DE FIGUEIREDO, N. 320, BL 05, LJ 101',br:'Barra da Tijuca',ci:'rio',av:3039000,cx:1484489.01,ar:117,ri:'alto',tg:['online'],tx:'Descrição Caixa: Loja, 0.00 de área total, 117.00 de área privativa, 0.00 de área do terreno, 8 vaga(s) de garagem. Pagamento à vista — sem financiamento. Modalidade: Venda Direta Online.'},
+  {id:'0000010139771',tp:'sala',ti:'Sala Comercial · Centro',de:'30m² · AVENIDA ALMIRANTE  BARROSO, N. 63, SL 2402',br:'Centro',ci:'rio',av:310000,cx:160329.80,ar:30,ri:'medio',tg:['fin','online'],tx:'Descrição Caixa: Sala, 0.00 de área total, 30.00 de área privativa, 0.00 de área do terreno. Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Direta Online.'},
+  {id:'0000010217554',tp:'sala',ti:'Sala Comercial · Centro',de:'35m² · AVENIDA RIO BRANCO, N. 156, SL 1114',br:'Centro',ci:'rio',av:185000,cx:107710.06,ar:35,ri:'medio',tg:['fin','online'],tx:'Descrição Caixa: Sala, 0.00 de área total, 35.00 de área privativa, 0.00 de área do terreno. Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Direta Online.'},
+  {id:'1600000040472',tp:'apartamento',ti:'Apartamento 3 Quartos · Maracanã',de:'3 quartos · 1 vaga · 151m² · AVENIDA MARACANA, N. 3200, Apto C01,',br:'Maracanã',ci:'rio',av:752000,cx:479260.35,ar:151,ri:'baixo',tg:['fin','online'],tx:'Descrição Caixa: Apartamento, 151.00 de área total, 151.00 de área privativa, 0.00 de área do terreno,  3 qto(s), a.serv, WC, WC Emp, 1 sala(s), cozinha, 1 vaga(s) de garagem. Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Online.'},
+  {id:'1444410889302',tp:'apartamento',ti:'Apartamento · Maracanã',de:'65m² · RUA SAO FRANCISCO XAVIER, N. 989, Apto 604, AP 604',br:'Maracanã',ci:'rio',av:293147.23,cx:172814.90,ar:65,ri:'baixo',tg:['fin','online'],tx:'Descrição Caixa: Apartamento, 0.00 de área total, 65.00 de área privativa, 0.00 de área do terreno. Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Direta Online.'},
+  {id:'1555532662231',tp:'apartamento',ti:'Apartamento 2 Quartos · Madureira',de:'2 quartos · 1 vaga · 46m² · AVENIDA MINISTRO EDGARD ROMERO, N. 881, Apto 706, BL 02',br:'Madureira',ci:'rio',av:255452.30,cx:101386.35,ar:46,ri:'medio',tg:['fin','online'],tx:'Descrição Caixa: Apartamento, 0.00 de área total, 46.00 de área privativa, 0.00 de área do terreno,  2 qto(s), 1 sala(s), cozinha, 1 vaga(s) de garagem. Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Online.'},
+  {id:'8023170007777',tp:'casa',ti:'Casa 3 Quartos · Madureira',de:'3 quartos · 119,97m² · RUA DELFINA ALVES, N. 614, LOTE 206',br:'Madureira',ci:'rio',av:184000,cx:18400,ar:119.97,ri:'alto',tg:['online'],tx:'Descrição Caixa: Casa, 120.00 de área total, 119.97 de área privativa, 190.00 de área do terreno,  3 qto(s), varanda, a.serv, WC, 1 sala(s), cozinha. Pagamento à vista — sem financiamento. Modalidade: Venda Online.'},
+  {id:'1787701227104',tp:'apartamento',ti:'Apartamento 2 Quartos · Madureira',de:'2 quartos · 40m² · RUA MARIA LOPES, N. 655, Apto 105, BL 01',br:'Madureira',ci:'rio',av:201000,cx:90858.27,ar:40,ri:'medio',tg:['fin','online'],tx:'Descrição Caixa: Apartamento, 0.00 de área total, 40.00 de área privativa, 0.00 de área do terreno,  2 qto(s), WC, 1 sala(s), cozinha. Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Online.'},
+  {id:'8444413085636',tp:'casa',ti:'Casa 2 Quartos · Jardim Balneário',de:'2 quartos · 1 vaga · 85,25m² · RUA APOLO 5, N. SN, CS 02 LT 15 QD 41',br:'Jardim Balneário',ci:'cabofrio',av:427577.87,cx:272501.49,ar:85.25,ri:'medio',tg:['fin','online'],tx:'Descrição Caixa: Casa, 85.25 de área total, 85.25 de área privativa, 122.28 de área do terreno,  2 qto(s), a.serv, WC, 1 sala(s), cozinha, 1 vaga(s) de garagem. Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Direta Online.'},
+  {id:'1444407069537',tp:'apartamento',ti:'Apartamento 2 Quartos · Centro',de:'2 quartos · 1 vaga · 74m² · R BARAO DO AMAZONAS, N. 02, Apto 503, BL II',br:'Centro',ci:'niteroi',av:440000,cx:280418.29,ar:74,ri:'medio',tg:['fin','online'],tx:'Descrição Caixa: Apartamento, 74.00 de área total, 74.00 de área privativa, 0.00 de área do terreno,  2 qto(s), a.serv, WC, 1 sala(s), cozinha, 1 vaga(s) de garagem. Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Direta Online.'},
+  {id:'1444423258985',tp:'terreno',ti:'Terreno · Itaipu',de:'terreno 530,20m² · ESTRADA SENADOR FERNANDES DA CUNHA, N. 1330, Nº 09, QD 06 - RUA 2',br:'Itaipu',ci:'niteroi',av:187743.82,cx:118170.33,ar:530.20,ri:'medio',tg:['fin','online'],tx:'Descrição Caixa: Terreno, 0.00 de área total, 0.00 de área privativa, 530.20 de área do terreno. Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Direta Online.',m2o:{zap:1200,qa:1000,src:'ZAP·Itaipu terreno Jun/26'}},
+  {id:'0000010279834',tp:'casa',ti:'Casa 6 Quartos · Santa Rosa',de:'6 quartos · 1 vaga · 452m² · RUA DESEMBARGADOR FELICIO PANZA, N. 45, CASA',br:'Santa Rosa',ci:'niteroi',av:1335000,cx:850814.59,ar:452,ri:'baixo',tg:['fin','online'],tx:'Descrição Caixa: Casa, 0.00 de área total, 452.00 de área privativa, 610.00 de área do terreno,  6 qto(s), varanda, a.serv, WC, 2 sala(s), 1 lavabo(s), DCE, cozinha, 1 vaga(s) de garagem. Pagamento: recursos próprios e financiamento Caixa (SBPE). Modalidade: Venda Direta Online.'},
 ];
 
 // score
@@ -330,19 +354,58 @@ for(var _=0;_<D.length;_++){
 // cidade info
 var MC={
   niteroi:{m2v:'R$ 7.730/m²',m2a:'R$ 34/m²',val:'+6,99% (12m)',rent:'~0,5–0,7% a.m.',dem:'Alta',itb:'ITBI 2% + cartório ~1,5%',inf:'Niterói: IDH-M 0,837, +500 linhas de ônibus, barcas p/ Rio (~20min), ciclovias em expansão.',chips:['🚌 +500 linhas','⛴ Barcas p/ Rio','🚲 Ciclovias','🏥 HU-UFF','🎓 UFF+UERJ'],pj:[{t:'VLT Niterói — R$450M',d:'5km, 10 estações, obras 2026.',l:'https://niteroi.rj.gov.br/prefeito-e-ministro-da-fazenda-anunciam-financiamento-para-o-primeiro-vlt-de-niteroi/'},{t:'Linha 3 Metrô — R$28,8B',d:'Praça XV→São Gonçalo, 31 estações.',l:'https://prefeitura.rio/cidade/prefeitura-participa-da-apresentacao-do-novo-projeto-de-expansao-metroviario/'},{t:'Plano Niterói 2050',d:'Revitalização do Centro, ciclovias.',l:'https://niteroi.rj.gov.br/niteroi-lanca-plano-estrategico-ate-2050-com-foco-em-inovacao-inclusao-social-e-qualidade-de-vida/'}]},
-  saogoncalo:{m2v:'~R$ 3.200/m²',m2a:'R$ 22/m²',val:'Crescente 2025',rent:'~0,7–0,9% a.m.',dem:'Alta (crescente)',itb:'ITBI 2% + cartório ~1,5%',inf:'São Gonçalo: 2º município mais populoso do RJ (~1,1M hab.), polo comercial em Alcântara.',chips:['🚌 Linhas p/ Niterói e Rio','🛣 BR-101','🏪 Polo Alcântara','🏥 H.E. Alberto Torres'],pj:[{t:'Linha 3 Metrô até Guaxindiba',d:'Conectará SG ao Rio via Niterói.',l:'https://prefeitura.rio/cidade/prefeitura-participa-da-apresentacao-do-novo-projeto-de-expansao-metroviario/'},{t:'Terminal VLT em Neves',d:'Integração com VLT de Niterói.',l:'https://www.atribunarj.com.br/materia/vlt-de-niteroi-comecara-a-ser-construido-em-2026-afirma-rodrigo-neves/'}]}
+  saogoncalo:{m2v:'~R$ 3.200/m²',m2a:'R$ 22/m²',val:'Crescente 2025',rent:'~0,7–0,9% a.m.',dem:'Alta (crescente)',itb:'ITBI 2% + cartório ~1,5%',inf:'São Gonçalo: 2º município mais populoso do RJ (~1,1M hab.), polo comercial em Alcântara.',chips:['🚌 Linhas p/ Niterói e Rio','🛣 BR-101','🏪 Polo Alcântara','🏥 H.E. Alberto Torres'],pj:[{t:'Linha 3 Metrô até Guaxindiba',d:'Conectará SG ao Rio via Niterói.',l:'https://prefeitura.rio/cidade/prefeitura-participa-da-apresentacao-do-novo-projeto-de-expansao-metroviario/'},{t:'Terminal VLT em Neves',d:'Integração com VLT de Niterói.',l:'https://www.atribunarj.com.br/materia/vlt-de-niteroi-comecara-a-ser-construido-em-2026-afirma-rodrigo-neves/'}]},
+  rio:{m2v:'~R$ 9.500/m²',m2a:'~R$ 40/m²',val:'Centro +17% (12m)',rent:'~0,5% a.m.',dem:'Alta',itb:'ITBI 3% + cartório ~1,5%',inf:'Rio de Janeiro: capital, ~6,2M hab. Metrô (L1/L2/L4), BRT, trens SuperVia e VLT no Centro/Porto. Mercado comercial no Centro com forte oferta.',chips:['🚇 Metrô L1/L2/L4','🚌 BRT','🚆 Trens SuperVia','🚋 VLT Carioca','🏖 Praias'],pj:[{t:'Reviver Centro',d:'Programa de revitalização e repovoamento do Centro do Rio.',l:'https://prefeitura.rio'},{t:'BRT Transbrasil',d:'Corredor de alta capacidade na Av. Brasil.',l:'https://brtrio.com'},{t:'VLT Carioca',d:'Integra Centro, Porto e Santos Dumont.',l:'https://www.vltrio.com.br'}]},
+  cabofrio:{m2v:'~R$ 5.000/m²',m2a:'~R$ 30/m²',val:'Região dos Lagos',rent:'~0,6–0,8% a.m. (+ temporada)',dem:'Sazonal/turística',itb:'ITBI 2% + cartório ~1,5%',inf:'Cabo Frio: Região dos Lagos, ~230 mil hab.; economia de turismo e veraneio; praias do Forte e Peró.',chips:['🏖 Região dos Lagos','🛣 Via Lagos (RJ-124)','🚌 Rodoviária','🌅 Turismo','🏥 Hospitais'],pj:[{t:'Aeroporto Internacional',d:'Conexões para a Região dos Lagos.',l:'https://www.cabofrio.rj.gov.br'},{t:'Requalificação de orlas',d:'Melhorias de mobilidade e turismo.',l:'https://www.cabofrio.rj.gov.br'}]}
 };
 var M2={
-  'Icaraí':{zap:8853,qa:5664,src:'ZAP·QuintoAndar Mai/25'},
-  'Centro':{zap:5200,qa:4800,src:'DataZAP Niterói Mai/25'},
-  'Itaipu':{zap:5694,qa:5000,src:'ZAP Itaipu Mai/25'},
-  'Maçeió':{zap:5800,qa:5200,src:'DataZAP oceânica Mai/25'},
-  'Largo do Barradas':{zap:4800,qa:4200,src:'DataZAP Niterói Mai/25'},
-  'Santa Rosa':{zap:5500,qa:4900,src:'ZAP Santa Rosa Mai/25'},
-  'Alcântara':{zap:3480,qa:3200,src:'Imovelweb SG Mai/25'},
-  'Marambaia':{zap:2900,qa:2600,src:'ZAP Marambaia SG Mai/25'},
-  'Mutondo':{zap:2700,qa:2400,src:'DataZAP SG Mai/25'},
-  'Nova Cidade':{zap:2800,qa:2500,src:'DataZAP SG Mai/25'}
+  'niteroi|Icaraí':{zap:8853,qa:5664,src:'ZAP·QuintoAndar Mai/25'},
+  'niteroi|Centro':{zap:5200,qa:4800,src:'DataZAP Niterói Mai/25'},
+  'niteroi|Itaipu':{zap:5694,qa:5000,src:'ZAP Itaipu Mai/25'},
+  'niteroi|Maçeió':{zap:5800,qa:5200,src:'DataZAP oceânica Mai/25'},
+  'niteroi|Largo do Barradas':{zap:4800,qa:4200,src:'DataZAP Niterói Mai/25'},
+  'niteroi|Santa Rosa':{zap:5500,qa:4900,src:'ZAP Santa Rosa Mai/25'},
+  'saogoncalo|Alcântara':{zap:3480,qa:3200,src:'Imovelweb SG Mai/25'},
+  'saogoncalo|Marambaia':{zap:2900,qa:2600,src:'ZAP Marambaia SG Mai/25'},
+  'saogoncalo|Mutondo':{zap:2700,qa:2400,src:'DataZAP SG Mai/25'},
+  'rio|Barra da Tijuca':{zap:8500,qa:7500,src:'ZAP·Loft Barra Jun/26'},
+  'rio|Centro':{zap:5000,qa:4300,src:'ZAP·Wimoveis Centro-RJ Jun/26'},
+  'rio|Maracanã':{zap:6000,qa:5783,src:'QuintoAndar·ZAP Maracanã Jun/26'},
+  'rio|Madureira':{zap:3500,qa:3300,src:'Loft·QuintoAndar Madureira Jun/26'},
+  'cabofrio|Jardim Balneário':{zap:4500,qa:4000,src:'ZAP·Imovelguide Cabo Frio Jun/26'}
+};
+
+var BASE='https://victorvcs.github.io/ofertas-leilao-caixa/fotos/';
+var FOTO_MAP={
+  '8444419293320':'F844441929332021',
+  '0000010207829':'F000001020782921',
+  '1555518585837':'F155551858583721',
+  '0000010171274':'F000001017127421',
+  '1444420915292':'F144442091529221',
+  '8444409347125':'F844440934712521',
+  '1555527013638':'F155552701363821',
+  '1444403164179':'F144440316417921',
+  '8444409733890':'F844440973389021',
+  '8444422392856':'F844442239285621',
+  '8444422862364':'F844442286236421',
+  '8444425826091':'F844442582609121',
+  '8444424859557':'F844442485955721',
+  '1444412529826':'F144441252982621',
+  '1444407181205':'F144440718120521',
+  '1444420842902':'F144442084290221',
+  '1555533806350':'F155553380635021',
+  '0000010208057':'F000001020805721',
+  '0000010139771':'F000001013977121',
+  '0000010217554':'F000001021755421',
+  '1600000040472':'F160000004047221',
+  '1444410889302':'F144441088930221',
+  '1555532662231':'F155553266223121',
+  '8023170007777':'F802317000777721',
+  '1787701227104':'F178770122710421',
+  '8444413085636':'F844441308563621',
+  '1444407069537':'F144440706953721',
+  '1444423258985':'F144442325898521',
+  '0000010279834':'F000001027983421',
 };
 
 // SVGs
@@ -354,14 +417,19 @@ function rLbl(r){return r==='baixo'?'🟢 Baixo Risco':r==='medio'?'🟡 Médio 
 function sCls(s){return s>=80?'t-sc-s':s>=65?'t-sc-a':s>=50?'t-sc-b':'t-sc-c'}
 function sLbl(s){return (s>=80?'⭐':s>=65?'✅':'⚠️')+' Score '+s}
 
+// cidade + tipos
+var CITY_NAME={niteroi:'Niterói',saogoncalo:'São Gonçalo',rio:'Rio de Janeiro',cabofrio:'Cabo Frio'};
+var TYPE_ORDER=['apartamento','casa','sala','loja','comercial','terreno','vaga'];
+var TYPE_LABEL={apartamento:'🏢 Apartamentos',casa:'🏠 Casas',sala:'🏢 Salas Comerciais',loja:'🏬 Lojas',comercial:'🏪 Pontos Comerciais',terreno:'🟩 Terrenos',vaga:'🚗 Vagas de Garagem'};
+function getM2(op){return op.m2o||M2[op.ci+'|'+op.br]||{zap:3500,qa:3000,src:'Estimativa DataZAP'};}
+
 // ── ESTADO
 var aba='todos', sort='score';
 
 function filtered(){
   var r=[];
   for(var i=0;i<D.length;i++){
-    if(aba==='niteroi'&&D[i].ci!=='niteroi')continue;
-    if(aba==='saogoncalo'&&D[i].ci!=='saogoncalo')continue;
+    if(aba!=='todos'&&D[i].ci!==aba)continue;
     r.push(D[i]);
   }
   r.sort(function(a,b){
@@ -379,7 +447,9 @@ function renderTabs(){
   var defs=[
     {id:'todos',lb:'🏠 Todos'},
     {id:'niteroi',lb:'📍 Niterói'},
-    {id:'saogoncalo',lb:'📍 São Gonçalo'}
+    {id:'saogoncalo',lb:'📍 São Gonçalo'},
+    {id:'rio',lb:'📍 Rio de Janeiro'},
+    {id:'cabofrio',lb:'📍 Cabo Frio'}
   ];
   for(var i=0;i<defs.length;i++){
     var prev=aba; aba=defs[i].id;
@@ -403,17 +473,19 @@ function renderTabs(){
 // ── RENDER CARDS
 function renderCards(){
   var f=filtered();
-  var nit=[],sg=[];
-  for(var i=0;i<f.length;i++){(f[i].ci==='niteroi'?nit:sg).push(f[i]);}
-  var gn=document.getElementById('gn'),gg=document.getElementById('gg');
-  gn.innerHTML='';gg.innerHTML='';
-  document.getElementById('sn').style.display=nit.length?'':'none';
-  document.getElementById('sg').style.display=sg.length?'':'none';
-  var snSep=document.querySelector('#sn .sep'),sgSep=document.querySelector('#sg .sep');
-  if(snSep)snSep.style.display=(aba==='todos'&&nit.length)?'flex':'none';
-  if(sgSep)sgSep.style.display=(aba==='todos'&&sg.length)?'flex':'none';
-  for(var i=0;i<nit.length;i++)gn.appendChild(mkCard(nit[i]));
-  for(var i=0;i<sg.length;i++)gg.appendChild(mkCard(sg[i]));
+  var cont=document.getElementById('sections');cont.innerHTML='';
+  for(var t=0;t<TYPE_ORDER.length;t++){
+    var tp=TYPE_ORDER[t];
+    var items=[];for(var i=0;i<f.length;i++){if(f[i].tp===tp)items.push(f[i]);}
+    if(!items.length)continue;
+    var sec=document.createElement('div');sec.className='sec-block';
+    var sep=document.createElement('div');sep.className='sep';
+    sep.innerHTML='<div class="sep-l"></div><div class="sep-t">'+TYPE_LABEL[tp]+' <span style="color:var(--su)">('+items.length+')</span></div><div class="sep-l"></div>';
+    sec.appendChild(sep);
+    var grid=document.createElement('div');grid.className='grid';
+    for(var i=0;i<items.length;i++)grid.appendChild(mkCard(items[i]));
+    sec.appendChild(grid);cont.appendChild(sec);
+  }
   var lbl={score:'por score',desconto:'por maior desconto',preco:'por menor preço',lucro:'por maior lucro'};
   document.getElementById('cnt').textContent=f.length+' leilõe'+(f.length===1?'':'s');
   document.getElementById('cnt-sub').textContent=' · '+lbl[sort];
@@ -453,22 +525,24 @@ function mkCard(op){
       '<a href="'+curl+'" target="_blank" class="btn btn-cai">'+eSVG+' Site Caixa</a>'+
       '<a href="https://wa.me/'+WPP+'?text='+wm+'" target="_blank" class="btn btn-wpi">'+wSVG+' Interesse</a>'+
     '</div>';
-  var BASE_FOTOS='https://victorvcs.github.io/ofertas-leilao-caixa/fotos/';
   var img=div.querySelector('.card-img img');
   if(img){
-    img.onload=function(){
-      this.style.opacity='1';
-      var sh=this.parentNode.querySelector('.shimmer');
-      var no=this.parentNode.querySelector('.no-img');
-      if(sh)sh.style.display='none';
-      if(no)no.style.display='none';
-    };
-    img.onerror=function(){
-      this.style.display='none';
-      var sh=this.parentNode.querySelector('.shimmer');
-      if(sh)sh.style.display='none';
-    };
-    img.src=BASE_FOTOS+'F'+op.id+'21.jpg';
+    var fname=FOTO_MAP[op.id];
+    if(fname){
+      img.onload=function(){
+        this.style.opacity='1';
+        var sh=this.parentNode.querySelector('.shimmer');
+        var no=this.parentNode.querySelector('.no-img');
+        if(sh)sh.style.display='none';
+        if(no)no.style.display='none';
+      };
+      img.onerror=function(){
+        this.style.display='none';
+        var sh=this.parentNode.querySelector('.shimmer');
+        if(sh)sh.style.display='none';
+      };
+      img.src=BASE+fname+'.jpg';
+    }
   }
   div.querySelector('.btn-det').onclick=function(e){e.stopPropagation();abrirModal(op.id);};
   return div;
@@ -483,12 +557,17 @@ function abrirModal(id){
   var ll=op.av-op.cx-dc, d=pct(op.cx,op.av), ROI=((ll/op.cx)*100).toFixed(0);
   var curl='https://venda-imoveis.caixa.gov.br/sistema/detalhe-imovel.asp?hdnOrigem=index&hdnimovel='+op.id;
   var wm=encodeURIComponent('Olá! Tenho interesse no imóvel "'+op.ti+'" (cód. '+op.id+').');
-  var cidade=op.ci==='niteroi'?'Niterói':'São Gonçalo';
+  var cidade=CITY_NAME[op.ci]||'';
 
   var mi=document.getElementById('m-img');
-  mi.style.display='block';
-  mi.onerror=function(){mi.style.display='none';};
-  mi.src='fotos/F'+op.id+'21.jpg';
+  var mfname=FOTO_MAP[op.id];
+  if(mfname){
+    mi.style.display='block';
+    mi.onerror=function(){mi.style.display='none';};
+    mi.src='https://victorvcs.github.io/ofertas-leilao-caixa/fotos/'+mfname+'.jpg';
+  } else {
+    mi.style.display='none';
+  }
 
   document.getElementById('m-h1').textContent=op.ti;
   document.getElementById('m-sub').textContent=op.de;
@@ -538,7 +617,7 @@ function abrirModal(id){
   document.getElementById('m-tx').textContent=op.tx;
 
   // portais
-  var m2=M2[op.br]||{zap:3500,qa:3000,src:'DataZAP'};
+  var m2=getM2(op);
   var ar=op.ar||55;
   var vtzap=Math.round(m2.zap*ar),vtqa=Math.round(m2.qa*ar);
   var vmed=Math.round((m2.zap+m2.qa)/2),vtmed=Math.round(vmed*ar),vtpess=Math.round(vtmed*.8);
@@ -617,6 +696,7 @@ document.getElementById('s3').onclick=function(){sort='lucro';   document.queryS
 document.addEventListener('keydown',function(e){if(e.key==='Escape')fecharModal();});
 
 // ── INIT
+var _pn=document.getElementById('pill-n');if(_pn)_pn.textContent=D.length;
 renderTabs();
 renderCards();
 </script>
